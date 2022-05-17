@@ -1,29 +1,36 @@
 package sistema.view;
 
-import javax.swing.JFrame;
+//import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JTextField;
+import javax.swing.text.MaskFormatter;
+import javax.swing.JFormattedTextField;
 
 //inicio teste GridBagLayout
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.awt.GridBagConstraints;
 import sistema.controller.ListagemClienteController;
+import sistema.entity.Cliente;
 
 //fim teste GridBagLayout
 
 public class FormularioCliente extends JDialog {
-    private JPanel jpnCentro = new JPanel();
+    //private JPanel jpnCentro = new JPanel();
     private JPanel jpnBotao = new JPanel();
     private JButton btnOK = new JButton("OK");
     private JButton btnCancelar = new JButton("Cancelar");
-    private JTextField txtId = new JTextField(10);
-    private JTextField txtNome = new JTextField(10);
-    private JTextField txtCPF = new JTextField(10);
-    private JTextField txtDataNascimento = new JTextField(4);
+    private JTextField txtId = new JTextField();
+    private JTextField txtNome = new JTextField();
+    private JFormattedTextField txtCPF;
+    private MaskFormatter mascaraCPF;
+    private JFormattedTextField txtDataNascimento;
+    private MaskFormatter mascaraDataNascimento;
     
     //inicio teste GridBagLayout
     private JPanel pane = new JPanel(new GridBagLayout());
@@ -92,12 +99,18 @@ public class FormularioCliente extends JDialog {
 
         c.gridx = 0;
         c.gridy = 2;
-        c.weightx = 0.1; 
+        c.weightx = 0.1;
         pane.add(new JLabel("CPF: "), c);
 
         c.gridx = 1;
         c.gridy = 2;
-        c.weightx = 0.1; 
+        c.weightx = 0.1;
+        try {
+            mascaraCPF = new MaskFormatter("###.###.###-##");
+            txtCPF = new JFormattedTextField(mascaraCPF);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         pane.add(txtCPF, c);
 
         c.gridx = 0;
@@ -107,10 +120,29 @@ public class FormularioCliente extends JDialog {
 
         c.gridx = 1;
         c.gridy = 3;
-        c.weightx = 0.1; 
+        c.weightx = 0.1;
+        try {
+            mascaraDataNascimento = new MaskFormatter("##/##/####");
+            txtDataNascimento = new JFormattedTextField(mascaraDataNascimento);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         pane.add(txtDataNascimento, c);
         
         //fim teste GridBagLayout
+    }
+
+    public Cliente atualiza(Cliente cliente) { // foi pulado camadas aqui para simplificar o exercicio. No entanto, na prática seria criado um objeto Cliente para a camada mais externa e seria copiado 
+        cliente.setId(Long.parseLong(txtId.getText()));
+        cliente.setNome(txtNome.getText());
+        cliente.setCPF(txtCPF.getText());
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            cliente.setBornDate(sdf.parse(txtDataNascimento.getText()));
+        } catch(ParseException e) {
+            e.printStackTrace();
+        }
+        return cliente;
     }
     
     //inicio testes
@@ -123,7 +155,6 @@ public class FormularioCliente extends JDialog {
         jpnBotao.add(btnCancelar);
         btnCancelar.addActionListener(controller);
         btnCancelar.setName("btnCancelar");
-
 
     }
         
