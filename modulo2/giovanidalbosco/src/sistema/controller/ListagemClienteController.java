@@ -29,20 +29,13 @@ public class ListagemClienteController implements ActionListener{
             case "btnDelete":
                 btnExcluirClique();
             break;
-            //inicio teste
-            case "btnOK":
-                btnOKClique();
-            break;
-            case "btnCancelar":
-                btnCancelarClique();
-            break;
-            //fim teste
         }
     }
     
     private void btnNovoClique() {
         //JOptionPane.showMessageDialog(null, "Botão Novo");
-        FormularioCliente formulario = new FormularioCliente();
+        Cliente novoCliente = new Cliente();
+        FormularioCliente formulario = new FormularioCliente(novoCliente);
     }
     private void btnAlterarClique() {
         JOptionPane.showMessageDialog(null, "Botão Alterar");
@@ -50,12 +43,4 @@ public class ListagemClienteController implements ActionListener{
     private void btnExcluirClique() {
         JOptionPane.showMessageDialog(null, "Botão Excluir");
     }
-    //inicio teste
-    private void btnOKClique() {
-        JOptionPane.showMessageDialog(null, "Teste 1");
-    }
-    private void btnCancelarClique() {
-        JOptionPane.showMessageDialog(null, "Teste 2");
-    }
-    //fim teste
 }

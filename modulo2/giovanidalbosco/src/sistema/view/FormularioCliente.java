@@ -15,7 +15,7 @@ import java.awt.Insets;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.awt.GridBagConstraints;
-import sistema.controller.ListagemClienteController;
+import sistema.controller.FormularioClienteController;
 import sistema.entity.Cliente;
 
 //fim teste GridBagLayout
@@ -36,11 +36,22 @@ public class FormularioCliente extends JDialog {
     private JPanel pane = new JPanel(new GridBagLayout());
     private GridBagConstraints c = new GridBagConstraints();
     
-    private ListagemClienteController controller = new ListagemClienteController();
+    private FormularioClienteController controller = new FormularioClienteController(this);
+    private Cliente cliente = new Cliente();
     
     //fim teste GridBagLayout
+    
+    public Cliente getCliente() {
+        return cliente;
+    }
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 
-    public FormularioCliente() {
+    public FormularioCliente(Cliente cliente) {
+        
+        this.cliente = cliente;
+        
         setSize(400,300);
         setModal(true);
         criarPaineis(); //não esquece de chamar o metodo aqui!!!
@@ -134,7 +145,7 @@ public class FormularioCliente extends JDialog {
 
     public Cliente atualiza(Cliente cliente) { // foi pulado camadas aqui para simplificar o exercicio. No entanto, na prática seria criado um objeto Cliente para a camada mais externa e seria copiado 
         cliente.setId(Long.parseLong(txtId.getText()));
-        cliente.setNome(txtNome.getText());
+        cliente.setName(txtNome.getText());
         cliente.setCPF(txtCPF.getText());
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         try {

@@ -34,6 +34,8 @@ public class TabelaClienteModel extends AbstractTableModel {
                 return umCliente.getName();
             case 2:
                 return umCliente.getBornDate();
+            case 3:
+                return umCliente.getCPF();
             default:
                 return "";
         }
@@ -41,6 +43,6 @@ public class TabelaClienteModel extends AbstractTableModel {
     
     @Override
     public String getColumnName(int column) {
-        return new String[]{"Código","Nome","Data Nascimento",""}[column];
+        return new String[]{"Código","Nome","Data Nascimento","CPF"}[column];
     }
 }
