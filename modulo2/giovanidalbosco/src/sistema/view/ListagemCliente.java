@@ -23,6 +23,7 @@ public class ListagemCliente extends JFrame {
 
     public ListagemCliente() {
         setSize(500,400);
+        setTitle("Listagem de Clientes");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         criaPaineis();
         criaBotoes();
@@ -45,15 +46,15 @@ public class ListagemCliente extends JFrame {
 
         jpnSouth.add(btnNew);
         btnNew.addActionListener(controller);
-        btnNew.setName("btnNew");
+        btnNew.setName("btnNovo");
 
         jpnSouth.add(btnChange);
         btnChange.addActionListener(controller);
-        btnChange.setName("btnChange");
+        btnChange.setName("btnAlterar");
 
         jpnSouth.add(btnDelete);
         btnDelete.addActionListener(controller);
-        btnDelete.setName("btnDelete");
+        btnDelete.setName("btnExcluir");
     }
 
 }

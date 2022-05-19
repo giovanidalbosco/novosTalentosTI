@@ -1,16 +1,19 @@
 package sistema.controller;
 
-import sistema.service.ClienteService;
-import sistema.view.FormularioCliente;
-import sistema.entity.Cliente;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.*;
 import java.util.ArrayList;
+
+import javax.swing.*;
+
+
+import sistema.entity.Cliente;
+import sistema.service.ClienteService;
+import sistema.view.FormularioCliente;
 
 public class ListagemClienteController implements ActionListener{
     private ClienteService service = new ClienteService();
+
 
     public ArrayList<Cliente> getAllClientes() {
         return service.getAllClientes();
@@ -20,13 +23,13 @@ public class ListagemClienteController implements ActionListener{
     public void actionPerformed(ActionEvent e /*e de event*/) {
         JComponent botaoClicado = (JComponent)e.getSource();
         switch(botaoClicado.getName()) {
-            case "btnNew":
+            case "btnNovo":
                 btnNovoClique();
             break;
-            case "btnChange":
+            case "btnAlterar":
                 btnAlterarClique();
             break;
-            case "btnDelete":
+            case "btnExcluir":
                 btnExcluirClique();
             break;
         }
@@ -36,6 +39,8 @@ public class ListagemClienteController implements ActionListener{
         //JOptionPane.showMessageDialog(null, "Botão Novo");
         Cliente novoCliente = new Cliente();
         FormularioCliente formulario = new FormularioCliente(novoCliente);
+        service.save(novoCliente);
+        
     }
     private void btnAlterarClique() {
         JOptionPane.showMessageDialog(null, "Botão Alterar");

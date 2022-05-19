@@ -3,16 +3,16 @@ import java.util.Date;
 
 public class Cliente {
     private long id;
-    private String name;
+    private String nome;
     private String CPF;
-    private Date bornDate;
+    private Date dataNascimento;
 
     //CONTRUTORES
     public Cliente() {
 
     }
-    public Cliente(String name, String CPF) {
-        setName(name);
+    public Cliente(String nome, String CPF) {
+        setNome(nome);
         setCPF(CPF);
     }
 
@@ -23,11 +23,11 @@ public class Cliente {
     public long getId() {
         return id;
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
     public void setCPF(String CPF) {
         this.CPF = CPF;
@@ -35,11 +35,11 @@ public class Cliente {
     public String getCPF() {
         return CPF;
     }
-    public void setBornDate(Date bornDate) {
-        this.bornDate = bornDate;
+    public Date getDataNascimento() {
+        return dataNascimento;
     }
-    public Date getBornDate() {
-        return bornDate;
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
 }

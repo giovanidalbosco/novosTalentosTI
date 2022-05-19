@@ -1,9 +1,12 @@
 package sistema.controller;
 
-import sistema.view.FormularioCliente;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.*;
+
+import sistema.view.FormularioCliente;
+
 
 public class FormularioClienteController implements ActionListener{
     
@@ -12,7 +15,6 @@ public class FormularioClienteController implements ActionListener{
     public FormularioClienteController(FormularioCliente formCliente) {
         this.formCliente = formCliente;
     }
-
     @Override
     public void actionPerformed(ActionEvent e /*e de event*/) {
         JComponent botaoClicado = (JComponent)e.getSource();
@@ -34,14 +36,13 @@ public class FormularioClienteController implements ActionListener{
         */
     }
     
-    //inicio teste
     private void btnOKClique() {
         var cliente = formCliente.getCliente();
         formCliente.atualiza(cliente);
         formCliente.dispose();
     }
+
     private void btnCancelarClique() {
         JOptionPane.showMessageDialog(null, "Teste 2");
     }
-    //fim teste
 }

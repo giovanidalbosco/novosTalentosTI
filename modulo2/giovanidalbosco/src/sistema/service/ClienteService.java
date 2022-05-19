@@ -12,19 +12,19 @@ public class ClienteService {
     public ClienteService() {
         var cliente1 = new Cliente();
         cliente1.setId(1);
-        cliente1.setName("Zezinho");
+        cliente1.setNome("Zezinho");
         cliente1.setCPF("555.555.555-55");
         Calendar calendario = GregorianCalendar.getInstance();
         calendario.set(2022, 05, 12);
-        cliente1.setBornDate(calendario.getTime());
+        cliente1.setDataNascimento(calendario.getTime());
         listaClientes.add(cliente1);
 
         var cliente2 = new Cliente();
         cliente2.setId(2);
-        cliente2.setName("Luizinho");
+        cliente2.setNome("Luizinho");
         cliente2.setCPF("222.222.222-22");
         calendario.set(2020, 03, 15);
-        cliente2.setBornDate(calendario.getTime());
+        cliente2.setDataNascimento(calendario.getTime());
         listaClientes.add(cliente2);   
     }
 

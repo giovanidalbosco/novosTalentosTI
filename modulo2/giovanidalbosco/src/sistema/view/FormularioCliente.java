@@ -35,7 +35,6 @@ public class FormularioCliente extends JDialog {
     //inicio teste GridBagLayout
     private JPanel pane = new JPanel(new GridBagLayout());
     private GridBagConstraints c = new GridBagConstraints();
-    
     private FormularioClienteController controller = new FormularioClienteController(this);
     private Cliente cliente = new Cliente();
     
@@ -145,11 +144,11 @@ public class FormularioCliente extends JDialog {
 
     public Cliente atualiza(Cliente cliente) { // foi pulado camadas aqui para simplificar o exercicio. No entanto, na prática seria criado um objeto Cliente para a camada mais externa e seria copiado 
         cliente.setId(Long.parseLong(txtId.getText()));
-        cliente.setName(txtNome.getText());
+        cliente.setNome(txtNome.getText());
         cliente.setCPF(txtCPF.getText());
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         try {
-            cliente.setBornDate(sdf.parse(txtDataNascimento.getText()));
+            cliente.setDataNascimento(sdf.parse(txtDataNascimento.getText()));
         } catch(ParseException e) {
             e.printStackTrace();
         }
