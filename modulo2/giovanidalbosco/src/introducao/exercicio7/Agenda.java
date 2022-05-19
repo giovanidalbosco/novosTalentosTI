@@ -31,15 +31,15 @@ public class Agenda {
     public void imprimirAgenda() {
         StringBuilder infos = new StringBuilder();
         for(int i = 0; i < getListaAgendamentos().size(); i++) {
-            infos.append("Agenda: " + getId());
+            infos.append("\n\nAgenda: " + this.getId());
             infos.append("\nApontamento: " + getListaAgendamentos().get(i).getId());
             infos.append("\nData: " + getListaAgendamentos().get(i).getDataHora());
             infos.append("\nPaciente Id: " + getListaAgendamentos().get(i).getPaciente().getId());
             infos.append("\nPaciente: " + getListaAgendamentos().get(i).getPaciente().getNome());
             infos.append("\nTelefone: " + getListaAgendamentos().get(i).getPaciente().getTelefone());
-            infos.append("\nMedico Id: " + getListaAgendamentos().get(i).getMedico().getId());
-            infos.append("\nMedico: " + getListaAgendamentos().get(i).getMedico().getNome());
-            infos.append("\nCRM: " + getListaAgendamentos().get(i).getMedico().getCRM()); 
+            infos.append("\nMedico Id: " + this.getMedico().getId());
+            infos.append("\nMedico: " + this.getMedico().getNome());
+            infos.append("\nCRM: " + this.getMedico().getCRM()); 
         }
         System.out.println(infos.toString());
     }

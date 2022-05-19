@@ -48,6 +48,7 @@ public class App10 {
         agenda1.setMedico(medico1);
         agenda2.setMedico(medico2);
 
+        // agendamentos
         Agendamento agendamento1 = new Agendamento();
         agendamento1.setId(1);
         try {
@@ -129,10 +130,16 @@ public class App10 {
         agendamento8.setMedico(medico2);
 
         agenda1.getListaAgendamentos().add(agendamento1);
-        agenda1.getListaAgendamentos().add(agendamento2);
         agenda1.getListaAgendamentos().add(agendamento3);
-        agenda1.getListaAgendamentos().add(agendamento4);
+        agenda1.getListaAgendamentos().add(agendamento5);
+        agenda1.getListaAgendamentos().add(agendamento7);
+
+        agenda2.getListaAgendamentos().add(agendamento2);
+        agenda2.getListaAgendamentos().add(agendamento4);
+        agenda2.getListaAgendamentos().add(agendamento6);
+        agenda2.getListaAgendamentos().add(agendamento8);
 
         agenda1.imprimirAgenda();
+        agenda2.imprimirAgenda();
     }
 }

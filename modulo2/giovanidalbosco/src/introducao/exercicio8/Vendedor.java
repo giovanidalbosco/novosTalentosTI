@@ -19,11 +19,11 @@ public class Vendedor extends Funcionario {
         this.metaVendas = metaVendas;
     }
 
-    public EquipeDeVendas getListaVendedores() {
+    public EquipeDeVendas getEquipeDeVendas() {
         return equipeDeVendas;
     }
-    public void setListaVendedores(EquipeDeVendas equipeDeVendas) {
+    public void setEquipeDeVendas(EquipeDeVendas equipeDeVendas) {
         this.equipeDeVendas = equipeDeVendas;
+        //getEquipeDeVendas().getListaVendedores().add(this);
     }
-
 }
