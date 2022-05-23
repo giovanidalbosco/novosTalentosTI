@@ -2,6 +2,7 @@ import introducao.Pessoa;
 import introducao.Aplicativo;
 import introducao.Celular;
 //import introducao.*; => importa todas as classes dentro de introducao
+//import static introducao.Pessoa.mostraRaca; => para importar metodos estáticos
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -11,6 +12,7 @@ public class App {
         zezinho.setIdade(15);
         zezinho.setAltura(1.75f);
         zezinho.setCPF("123.456.789-10");
+        zezinho.setRaca("Humano");
 
         Pessoa luizinho = new Pessoa("Luizinho da Silva");
         luizinho.setIdade(43);
@@ -20,9 +22,13 @@ public class App {
         System.out.println(zezinho.getNome());
         System.out.println(zezinho.getIdade());
         System.out.println(zezinho.getAltura());
-        System.out.println(zezinho.getCPF()+"\n");
+        System.out.println(zezinho.getCPF());
+        System.out.println(zezinho.getRaca()+"\n");
 
-        System.out.printf("%s\n%d\n%.2f\n%s\n\n", luizinho.getNome(), luizinho.getIdade(), luizinho.getAltura(), luizinho.getCPF());
+        System.out.printf("%s\n%d\n%.2f\n%s\n%s\n\n", luizinho.getNome(), luizinho.getIdade(), luizinho.getAltura(), luizinho.getCPF(), luizinho.getRaca());
+
+        //zezinho.mostraRaca(); //por ser um método static, mostraRaca() deve ser acessado de uma forma estática
+        Pessoa.mostraRaca(); //metodos estáticos podem ser chamados através da classe
 
         System.out.println(zezinho.podeDirigir());
 

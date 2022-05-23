@@ -7,10 +7,10 @@ public class App9 {
     public static void main(String[] args) {
         SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy");
         
-        Pessoa pessoa1 = new Pessoa();
-        pessoa1.setNome("Giovani");
+        PlanilhaDeGastos mes1 = new PlanilhaDeGastos();
+        mes1.setMes("Janeiro");
 
-        TipoGasto gasto1 = new TipoGasto();
+        Gasto gasto1 = new Gasto();
         gasto1.setCategoria("Remedio");
         try {
             gasto1.setData(data.parse("09/05/2022"));
@@ -20,7 +20,7 @@ public class App9 {
         gasto1.setFormaPagamento("Dinheiro");
         gasto1.setValor(150f);
 
-        TipoGasto gasto2 = new TipoGasto();
+        Gasto gasto2 = new Gasto();
         gasto2.setCategoria("Roupa");
         try {
             gasto2.setData(data.parse("08/05/2022"));
@@ -30,13 +30,13 @@ public class App9 {
         gasto2.setFormaPagamento("Cartão");
         gasto2.setValor(200f);
 
-        Mes mes1 = new Mes("Janeiro");
-        mes1.getListaCompras().add(gasto1);
-        mes1.getListaCompras().add(gasto2);
+        GastosDiarios dia1 = new GastosDiarios();
+        dia1.getCompras().add(gasto1);
+        dia1.getCompras().add(gasto2);
 
-        pessoa1.getFaturaMensal().put(mes1.getNome(), mes1);
-
-        System.out.println(pessoa1.extratoFatura("janeiro"));
+        mes1.getDias().add(dia1);
+    
+        System.out.println(mes1.gastoMensal());
         
     }
 }

@@ -2,7 +2,7 @@ package introducao.exercicio6;
 
 import java.util.Date;
 
-public class TipoGasto {
+public class Gasto {
     private String categoria;
     private Date data;
     private float valor;
