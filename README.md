@@ -28,3 +28,9 @@
 
 - <https://docs.oracle.com/javase/7/docs/api/javax/swing/text/MaskFormatter.html>
 - MVP o que é?
+
+## 24/05/2022
+
+- Pesquisar sobre lambda expressions
+- programação funcional
+- 
