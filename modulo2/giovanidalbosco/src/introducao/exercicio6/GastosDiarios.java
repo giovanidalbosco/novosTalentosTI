@@ -2,6 +2,7 @@ package introducao.exercicio6;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 
 public class GastosDiarios {
     private Date dia;
@@ -21,4 +22,33 @@ public class GastosDiarios {
         this.compras = compras;
     }
     
+    public float gastoDiarioTotal() {
+        float gastoTotal = 0;
+        for(int i = 0; i < getCompras().size(); i++) {
+            gastoTotal += getCompras().get(i).getValor();
+        }
+        return gastoTotal;
+    }
+
+    
+    public void gastoDiarioTotalPorCategoria() {
+        HashMap<String,Float> lista = new HashMap<>();
+        for(int i = 0; i < getCompras().size(); i++) {
+            for(int j = 0; j< getCompras().size(); j++) {
+                if(getCompras().get(i).getCategoria().equals(getCompras().get(j).getCategoria())) {
+                    lista.put(getCompras().get(i).getCategoria(),0f);
+                }
+            }
+        }
+        for(int i = 0; i < getCompras().size(); i++) {
+            for(int j = 0; j < lista.size(); j++) {
+                if(lista.containsKey(getCompras().get(i).getCategoria())) {
+                    lista.put(getCompras().get(i).getCategoria(), lista.get(getCompras().get(i).getCategoria()) + getCompras().get(i).getValor());
+                }
+            }   
+        }
+        System.out.println(lista);
+    }
+    
+
 }

@@ -10,6 +10,7 @@ public class App9 {
         PlanilhaDeGastos mes1 = new PlanilhaDeGastos();
         mes1.setMes("Janeiro");
 
+        // dados de teste
         Gasto gasto1 = new Gasto();
         gasto1.setCategoria("Remedio");
         try {
@@ -30,13 +31,30 @@ public class App9 {
         gasto2.setFormaPagamento("Cartão");
         gasto2.setValor(200f);
 
+        Gasto gasto3 = new Gasto();
+        gasto3.setCategoria("Remedio");
+        try {
+            gasto3.setData(data.parse("10/05/2022"));
+        } catch(ParseException e) {
+            e.printStackTrace();
+        }
+        gasto3.setFormaPagamento("Dinheiro");
+        gasto3.setValor(125f);
+        // dados de teste
+
+
         GastosDiarios dia1 = new GastosDiarios();
         dia1.getCompras().add(gasto1);
         dia1.getCompras().add(gasto2);
+        dia1.getCompras().add(gasto3);
 
         mes1.getDias().add(dia1);
     
         System.out.println(mes1.gastoMensal());
+
+        System.out.println(dia1.gastoDiarioTotal());
+        dia1.gastoDiarioTotalPorCategoria();
+
         
     }
 }

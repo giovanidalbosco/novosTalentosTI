@@ -2,9 +2,11 @@ package sistema.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.spi.NumberFormatProvider;
 
 import javax.swing.*;
 
+import sistema.entity.Cliente;
 import sistema.view.FormularioCliente;
 
 
@@ -37,12 +39,29 @@ public class FormularioClienteController implements ActionListener{
     }
     
     private void btnOKClique() {
-        var cliente = formCliente.getCliente();
-        formCliente.atualiza(cliente);
-        formCliente.dispose();
+        try {
+            var cliente = formCliente.getCliente();
+            formCliente.atualiza(cliente);
+            if(validador(cliente) == true) {
+                formCliente.dispose();
+            }
+        } catch(NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Campo numérico não informado!");
+
+        }
     }
 
     private void btnCancelarClique() {
-        JOptionPane.showMessageDialog(null, "Teste 2");
+        //JOptionPane.showMessageDialog(null, "Teste 2");
+        formCliente.dispose();
+    }
+
+    private boolean validador(Cliente cliente) {
+        if(cliente.getNome() == null || cliente.getNome().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "O nome não pode ser deixado em branco!");
+            return false;
+        }
+
+        return true;
     }
 }

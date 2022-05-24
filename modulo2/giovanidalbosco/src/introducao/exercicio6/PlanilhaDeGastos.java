@@ -25,14 +25,12 @@ public class PlanilhaDeGastos {
     public float gastoMensal() {
         float gastoTotal = 0;
         for(int i = 0; i < getDias().size(); i++) {
-            for(int y = 0; y < getDias().get(i).getCompras().size(); y++) {
-                gastoTotal += getDias().get(i).getCompras().get(y).getValor();
-            }
+            gastoTotal += getDias().get(i).gastoDiarioTotal();
         }
         return gastoTotal;
     }
 
-    
+    /*
     public String gastoMensalPorCategoria(String teste) {
         DecimalFormat df = new DecimalFormat("#.00");
         StringBuilder lista = new StringBuilder();
@@ -44,5 +42,6 @@ public class PlanilhaDeGastos {
         }
         return lista.toString();
     }
-    
+    */
+
 }
