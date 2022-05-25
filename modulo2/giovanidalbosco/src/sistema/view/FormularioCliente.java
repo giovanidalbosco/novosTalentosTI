@@ -17,6 +17,7 @@ import java.text.SimpleDateFormat;
 import java.awt.GridBagConstraints;
 import sistema.controller.FormularioClienteController;
 import sistema.entity.Cliente;
+import sistema.exception.ValorInvalidoException;
 
 //fim teste GridBagLayout
 
@@ -142,15 +143,20 @@ public class FormularioCliente extends JDialog {
         //fim teste GridBagLayout
     }
 
-    public Cliente atualiza(Cliente cliente) { // foi pulado camadas aqui para simplificar o exercicio. No entanto, na prática seria criado um objeto Cliente para a camada mais externa e seria copiado 
-        cliente.setId(Long.parseLong(txtId.getText()));
+    public Cliente atualiza(Cliente cliente) throws ValorInvalidoException { // foi pulado camadas aqui para simplificar o exercicio. No entanto, na prática seria criado um objeto Cliente para a camada mais externa e seria copiado 
+        try {
+            cliente.setId(Long.parseLong(txtId.getText()));
+        } catch (NumberFormatException e) {
+            throw new ValorInvalidoException("Campo código deve conter números", e, "CODIGO");
+        }
+
         cliente.setNome(txtNome.getText());
         cliente.setCPF(txtCPF.getText());
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         try {
             cliente.setDataNascimento(sdf.parse(txtDataNascimento.getText()));
         } catch(ParseException e) {
-            e.printStackTrace();
+            throw new ValorInvalidoException("Valor de data inválido", e, "DATA NASCIMENTO");
         }
         return cliente;
     }

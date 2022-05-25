@@ -7,6 +7,7 @@ import java.text.spi.NumberFormatProvider;
 import javax.swing.*;
 
 import sistema.entity.Cliente;
+import sistema.exception.ValorInvalidoException;
 import sistema.view.FormularioCliente;
 
 
@@ -42,12 +43,10 @@ public class FormularioClienteController implements ActionListener{
         try {
             var cliente = formCliente.getCliente();
             formCliente.atualiza(cliente);
-            if(validador(cliente) == true) {
-                formCliente.dispose();
-            }
-        } catch(NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Campo numérico não informado!");
-
+            validador(cliente);
+        } catch(ValorInvalidoException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(),"", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
         }
     }
 
@@ -56,12 +55,22 @@ public class FormularioClienteController implements ActionListener{
         formCliente.dispose();
     }
 
-    private boolean validador(Cliente cliente) {
+    private void validador(Cliente cliente) throws ValorInvalidoException {  
         if(cliente.getNome() == null || cliente.getNome().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "O nome não pode ser deixado em branco!");
-            return false;
+            throw new ValorInvalidoException("O nome não pode ser deixado em branco", null, "NOME");
         }
-
-        return true;
+        if(cliente.getCPF() == null || cliente.getCPF().isEmpty()) {
+            throw new ValorInvalidoException("O CPF não pode ser deixado em branco", null, "CPF");
+        }
+        /*
+        if(cliente.getDataNascimento() == null || cliente.getDataNascimento().isEmpty()) {
+            throw new ValorInvalidoException("A data de nascimento não pode ser deixado em branco", null, "Data");
+        }*/
+        if(cliente.getId() / 1 == cliente.getId()) {
+            throw new ValorInvalidoException("O ID não pode ser diferente de 5", null, "ID");
+        }
     }
+    //criar uma validação para cada campo de tela do cliente
+    //alterar a mensagem de tela JOptionPane: transformar ela numa mensagem de erro - ok
+    //mostrar o campo que gerou o erro
 }
