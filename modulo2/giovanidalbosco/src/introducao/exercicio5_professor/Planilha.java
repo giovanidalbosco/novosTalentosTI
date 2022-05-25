@@ -12,15 +12,27 @@ public class Planilha {
         this.listaContasDeLuz = listaContasDeLuz;
     }
 
-    public float calculaUltimoValorMedio() {
+    public float calcularUltimoValorMedio() {
         float total = 0;
         for(int i = 0; i < getListaContasDeLuz().size(); i++) {
             total += getListaContasDeLuz().get(i).getValorDaConta();
         }
         return total/getListaContasDeLuz().size();
     }
+
+    public float calcularUltimoValorMediov2() {
+        float total = 0;
+        for(ContaDeLuz umaConta : getListaContasDeLuz()) {
+            total += umaConta.getValorDaConta();
+        }
+        return total / getListaContasDeLuz().size();
+    }
+
+    public float calcularUltimoValorMediov3() {
+        return (float)listaContasDeLuz.stream().mapToDouble(a -> a.getValorDaConta()).sum() / listaContasDeLuz.size();
+    }
     
-    public float calculaMaiorValor() {
+    public float calcularMaiorValor() {
         float maior = 0;
         for(int i = 0; i < getListaContasDeLuz().size(); i++) {
             if(getListaContasDeLuz().get(i).getValorDaConta() > maior) {
@@ -31,10 +43,10 @@ public class Planilha {
         return maior;
     }
 
-    public float calculaMenorValor() {
+    public float calcularMenorValor() {
         float menor = getListaContasDeLuz().get(0).getValorDaConta();
         for(int i = 0; i < getListaContasDeLuz().size(); i++) {
-            if(getListaContasDeLuz().get(i).getValorDaConta() > menor) {
+            if(getListaContasDeLuz().get(i).getValorDaConta() < menor) {
                 menor = getListaContasDeLuz().get(i).getValorDaConta();
             }
         }
