@@ -50,10 +50,11 @@ public class App9 {
 
         mes1.getDias().add(dia1);
     
-        System.out.println(mes1.gastoMensal());
+        System.out.println("Gasto mes 1: " + mes1.gastoMensal());
 
-        System.out.println(dia1.gastoDiarioTotal());
-        dia1.gastoDiarioTotalPorCategoria();
+        System.out.println("Gasto dia 1: " + dia1.gastoDiarioTotal());
+
+        System.out.println(dia1.gastoDiarioTotalPorCategoria().keySet());
 
         
     }

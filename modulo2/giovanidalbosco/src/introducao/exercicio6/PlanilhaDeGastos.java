@@ -30,18 +30,9 @@ public class PlanilhaDeGastos {
         return gastoTotal;
     }
 
-    /*
-    public String gastoMensalPorCategoria(String teste) {
-        DecimalFormat df = new DecimalFormat("#.00");
-        StringBuilder lista = new StringBuilder();
-        for(int i = 0; i < getDias().size(); i++) {
-            for(int y = 0; getDias().get(i).getCompras().size()) {
-                lista.append(getFaturaMensal().get(teste.toLowerCase()).getListaCompras().get(i).getCategoria() + ": R$");
-                lista.append(df.format(getFaturaMensal().get(teste.toLowerCase()).getListaCompras().get(i).getValor()) + "\n");
-            }
-        }
-        return lista.toString();
-    }
-    */
+    //public String gastoMensalPorCategoria() {
+        
+    //}
+    
 
 }

@@ -1,5 +1,6 @@
 package introducao.exercicio6;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -31,7 +32,8 @@ public class GastosDiarios {
     }
 
     
-    public void gastoDiarioTotalPorCategoria() {
+    public HashMap<String,Float> gastoDiarioTotalPorCategoria() {
+        //ArrayList<String> chaves = new ArrayList<>();
         HashMap<String,Float> lista = new HashMap<>();
         for(int i = 0; i < getCompras().size(); i++) {
             for(int j = 0; j< getCompras().size(); j++) {
@@ -47,7 +49,13 @@ public class GastosDiarios {
                 }
             }   
         }
-        System.out.println(lista);
+        
+        var chaves = lista.keySet();
+        System.out.println(chaves.toArray().toString());
+
+        // https://www.w3schools.blog/get-list-of-keys-from-hashmap-java
+
+        return lista;        
     }
     
 
