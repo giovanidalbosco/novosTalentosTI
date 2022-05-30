@@ -68,6 +68,6 @@ public class App11 {
     equipe2.setGestor(gerente2);
     
     System.out.println(equipe1.listarEquipe());
-
+    System.out.println(equipe2.listarEquipe());
     }
 }
