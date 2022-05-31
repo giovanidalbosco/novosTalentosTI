@@ -1,8 +1,7 @@
 package introducao.exercicio6;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Date;
+
 
 public class PlanilhaDeGastos {
     private String mes;

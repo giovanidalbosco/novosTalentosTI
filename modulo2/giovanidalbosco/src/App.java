@@ -23,9 +23,9 @@ public class App {
         System.out.println(zezinho.getIdade());
         System.out.println(zezinho.getAltura());
         System.out.println(zezinho.getCPF());
-        System.out.println(zezinho.getRaca()+"\n");
+        System.out.println(Pessoa.getRaca()+"\n"); //singleton
 
-        System.out.printf("%s\n%d\n%.2f\n%s\n%s\n\n", luizinho.getNome(), luizinho.getIdade(), luizinho.getAltura(), luizinho.getCPF(), luizinho.getRaca());
+        System.out.printf("%s\n%d\n%.2f\n%s\n%s\n\n", luizinho.getNome(), luizinho.getIdade(), luizinho.getAltura(), luizinho.getCPF(), Pessoa.getRaca()); //singleton
 
         //zezinho.mostraRaca(); //por ser um método static, mostraRaca() deve ser acessado de uma forma estática
         Pessoa.mostraRaca(); //metodos estáticos podem ser chamados através da classe

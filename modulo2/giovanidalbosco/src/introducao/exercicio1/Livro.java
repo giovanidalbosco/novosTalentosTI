@@ -1,5 +1,6 @@
 package introducao.exercicio1;
 
+import java.text.SimpleDateFormat;
 
 public class Livro {
     private String titulo;
@@ -40,13 +41,14 @@ public class Livro {
     }
 
     public String toString() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         //StringBuffer tread safe
         //StringBuilder non tread safe
         StringBuilder montadorString = new StringBuilder();
         montadorString.append("Escritor: ");
         montadorString.append(getEscritor().getNome());
         montadorString.append("\nNascido em: ");
-        montadorString.append(getEscritor().getDataNascimento());
+        montadorString.append(sdf.format(getEscritor().getDataNascimento()));
         montadorString.append("\nTítulo: ");
         montadorString.append(getTitulo());
         montadorString.append("\nPreço: R$");

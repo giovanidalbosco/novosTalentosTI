@@ -6,7 +6,6 @@ public class Autor {
     private String nome;
     private Date dataNascimento;
 
-    @Deprecated
     public Autor(String nome, Date dataNascimento) {
         setNome(nome);
         setDataNascimento(dataNascimento);
