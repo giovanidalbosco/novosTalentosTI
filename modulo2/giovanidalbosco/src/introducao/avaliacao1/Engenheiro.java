@@ -1,4 +1,4 @@
-package introducao.prova;
+package introducao.avaliacao1;
 
 public class Engenheiro extends Colaborador {
     private String formacao;

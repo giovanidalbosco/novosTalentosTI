@@ -1,4 +1,4 @@
-package introducao.prova;
+package introducao.avaliacao1;
 
 public class MaterialDeConstrucao {
     private String nome;
@@ -10,7 +10,7 @@ public class MaterialDeConstrucao {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    
+
     public float getPreco() {
         return preco;
     }

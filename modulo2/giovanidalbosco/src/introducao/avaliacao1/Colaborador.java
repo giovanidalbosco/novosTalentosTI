@@ -1,4 +1,4 @@
-package introducao.prova;
+package introducao.avaliacao1;
 
 public class Colaborador {
     private String nome;
@@ -18,7 +18,7 @@ public class Colaborador {
     public void setNumero(int numero) {
         this.numero = numero;
     }
-    
+
     public float getSalario() {
         return salario;
     }
