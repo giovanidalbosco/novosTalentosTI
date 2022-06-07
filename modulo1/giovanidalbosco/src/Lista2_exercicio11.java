@@ -1,3 +1,7 @@
+/* 11) Faça um programa que receba uma temperatura em Celsius,
+calcule e mostre essa temperatura em Fahrenheit. Sabe-se que
+F = (1,8 * C) + 32 */
+
 import java.util.Scanner;
 
 public class Lista2_exercicio11 {

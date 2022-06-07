@@ -1,3 +1,10 @@
+/* Escreva um algoritmo que solicite a quantidade total em
+miligramas de colesterol mau existente no sangue de um paciente.
+Considerando que o valor máximo ideal para uma pessoa saudável é
+130mg, caso a quantidade esteja menor apresente uma mensagem
+indicando que esta menor. Caso esteja acima, calcule o percentual
+que esta acima e apresente uma mensagem.*/
+
 import java.util.Scanner;
 
 public class Lista6_exercicio2 {
@@ -16,7 +23,3 @@ public class Lista6_exercicio2 {
         leitor.close();
     }
 }
-/*40)Escreva um algoritmo que solicite a quantidade total em miligramas de colesterol mau existente no sangue de um 
-paciente. Considerando que o valor máximo ideal para uma pessoa saudável é 130mg, caso a quantidade esteja menor 
-apresente uma mensagem indicando que esta menor. Caso esteja acima, calcule o percentual que esta acima e apresente 
-uma mensagem.*/

@@ -1,3 +1,7 @@
+/* Faça um programa que leia um número N que indica quantos
+valores inteiros e positivos devem ser lidos a seguir. Para cada
+número lido, mostre o valor lido e o fatorial desse valor. */
+
 import java.util.Scanner;
 
 public class Lista8_exercicio4 {
@@ -18,5 +22,3 @@ public class Lista8_exercicio4 {
         leitor.close();
     }
 }
-/*58) Faça um programa que leia um número N que indica quantos valores inteiros e positivos devem ser lidos a seguir.
-Para cada número lido, mostre o valor lido e o fatorial desse valor.*/

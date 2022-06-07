@@ -1,3 +1,9 @@
+/* 12) Sabe-se que, para iluminar de maneira correta os cômodos
+de uma casa, para cada metro quadrado, deve-se usar 18Watts de
+potência. Faça um programa que receba as duas dimensões de um
+cômodo (em metros), calcule e mostre a sua área (em metros
+quadrados) e a potência de iluminação que deverá ser utilizada. */
+
 import java.util.Scanner;
 
 public class Lista2_exercicio12 {

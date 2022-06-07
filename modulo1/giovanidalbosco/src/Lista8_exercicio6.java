@@ -1,3 +1,7 @@
+/* Elaborar um programa que efetue a leitura de 10 valores
+numéricos e apresente no final o total do somatório e a média do
+total. */
+
 import java.util.Scanner;
 
 public class Lista8_exercicio6 {
@@ -20,5 +24,3 @@ public class Lista8_exercicio6 {
         leitor.close();
     }
 }
-/*60) Elaborar um programa que efetue a leitura de 10 valores numéricos e apresente no final o total do somatório e a
-média do total.*/

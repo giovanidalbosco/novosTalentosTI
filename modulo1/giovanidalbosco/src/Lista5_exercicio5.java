@@ -1,3 +1,17 @@
+/* Faça um programa que receba o preço de um produto e o seu
+código de origem e mostre a sua procedência. A procedência obedece
+a tabela a seguir:
+
+Código de origem    Procedência
+1                       Sul
+2                      Norte
+3                      Leste
+4                      Oeste
+5 ou 6                Nordeste
+7 ou 8 ou 9           Sudeste
+10 a 20             Centro-Oeste
+21 a 30               Nordeste    */
+
 import java.util.Scanner;
 
 public class Lista5_exercicio5 {
@@ -32,15 +46,3 @@ public class Lista5_exercicio5 {
         leitor.close();
     }
 }
-/*
-38) Faça um programa que receba o preço de um produto e o seu código de origem e mostre a sua procedência. A procedência obedece a tabela a seguir:
-Código de origem    Procedência
-1                       Sul
-2                      Norte
-3                      Leste
-4                      Oeste
-5 ou 6                Nordeste
-7 ou 8 ou 9           Sudeste
-10 a 20             Centro-Oeste
-21 a 30               Nordeste
-*/

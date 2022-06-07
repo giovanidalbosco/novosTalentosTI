@@ -1,3 +1,6 @@
+/* Faça um programa que receba um número inteiro e mostre se ele
+é par ou impar. (utilize o operador %) */
+
 import java.util.Scanner;
 
 public class Lista4_exercicio2 {

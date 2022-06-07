@@ -1,3 +1,6 @@
+/* 7) Faça um programa que calcule e mostre a área de um quadrado.
+Sabe-se que: A=lado * lado */
+
 import java.util.Scanner;
 import java.lang.Math;
 

@@ -1,3 +1,7 @@
+/* 2) Faça um programa que receba o preço de um produto, calcule
+e mostre o novo preço, sabendo-se que esse sofreu um desconto de
+10% */
+
 import java.util.Scanner;
 
 public class Lista2_exercicio2 {

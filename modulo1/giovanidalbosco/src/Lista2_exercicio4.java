@@ -1,3 +1,8 @@
+/* 4) Faça um programa que receba o peso de uma pessoa, calcule e
+mostre:
+- o novo peso, se a pessoa engordar 15% sobre o peso digitado;
+- o novo peso, se a pessoa emagrecer 20% sobre o peso digitado. */
+
 import java.util.Scanner;
 
 public class Lista2_exercicio4 {

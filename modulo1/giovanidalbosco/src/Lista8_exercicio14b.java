@@ -1,7 +1,12 @@
+/* Faça um algoritmo que calcule a média de todas as turmas de
+uma escola. Considere como entradas o número de turmas e o número
+de alunos de cada turma. A média de cada turma deve ser
+apresentada, além da média geral, que será o resultado da média
+das turmas. */
+
 import java.util.Scanner;
 
-
-public class Lista8_exercicio14_copy {
+public class Lista8_exercicio14b {
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
         System.out.println("Digite o número de turmas da escola:");
@@ -25,6 +30,3 @@ public class Lista8_exercicio14_copy {
         System.out.printf("A média geral foi de %.1f\n", media);
     }
 }
-/*68) Faça um algoritmo que calcule a média de todas as turmas de uma escola. Considere como entradas o número de 
-turmas e o número de alunos de cada turma. A média de cada turma deve ser apresentada, além da média geral, que 
-será o resultado da média das turmas.  */

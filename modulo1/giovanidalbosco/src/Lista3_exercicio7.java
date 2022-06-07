@@ -1,3 +1,10 @@
+/* 27) Faça um programa que receba a quantidade de dinheiro em
+reais que uma pessoa que vai viajar possui. Essa pessoa vai passar
+por vários países e precisa converter seu dinheiro em dólares,
+marco alemão e libra esterlina. Sabe-se que a cotação do dólar é
+R$ 1,80 do marco alemão R$2,00 e da libra esterlina de R4 1,57. 
+O programa deve fazer as conversões e mostrá-las. */
+
 import java.util.Scanner;
 
 public class Lista3_exercicio7 {

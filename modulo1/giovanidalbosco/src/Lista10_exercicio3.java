@@ -1,3 +1,7 @@
+/* Faça um programa que receba dez números e armazene em uma
+lista. Em seguida, substitua todos os números cujo valor seja
+menor que 10 pelo valor ZERO. Imprima a lista em tela. */
+
 import java.util.Scanner;
 import java.util.Arrays;
 
@@ -18,5 +22,3 @@ public class Lista10_exercicio3 {
         leitor.close();
     }
 }
-/*74) Faça um programa que receba dez números e armazene em uma lista. Em seguida, substitua todos os números cujo 
-valor seja menor que 10 pelo valor ZERO. Imprima a lista em tela. */

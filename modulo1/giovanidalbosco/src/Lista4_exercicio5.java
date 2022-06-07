@@ -1,3 +1,13 @@
+/* Faça um programa que receba três notas de um aluno, calcule e
+mostre a média aritmética e a mensagem constante na tabela a
+seguir. Aos alunos que ficaram para exame, calcule e mostre a
+nota que deverão tirar para serem aprovados, considerando que a
+média exigida é 6.0
+Média Aritmética       Mensagem
+0,0 ●-------O 3,0      Reprovado
+3,0 ●-------O 7,0      Exame
+7,0 ●-------● 10,0     Aprovado          */
+
 import java.util.Scanner;
 
 public class Lista4_exercicio5 {

@@ -1,3 +1,8 @@
+/* Escreva um algoritmo que calcule o valor de Imposto de Renda
+que uma Pessoa Física deve pagar de acordo com o valor total de
+seu rendimento anual: abaixo de R$19.200 isento, acima deste valor
+e até R$30.000 8%. Mais que R$30.000 anuais 11%. */
+
 import java.util.Scanner;
 
 public class Lista6_exercicio9 {
@@ -19,6 +24,3 @@ public class Lista6_exercicio9 {
         leitor.close();
     }
 }
-/*47)Escreva um algoritmo que calcule o valor de Imposto de Renda que uma Pessoa Física deve pagar de acordo com o 
-valor total de seu rendimento anual: abaixo de R$19.200 isento, acima deste valor e até R$30.000 8%. Mais que 
-R$30.000 anuais 11%.*/

@@ -1,6 +1,10 @@
+/* Faça um programa que receba dez números e armazene em uma
+lista. Em seguida percorra toda a lista mostrando apenas os
+números que cujo valor seja superior a 10. */
+
 import java.util.Scanner;
 
-public class Lista10_exercicio1_copy {
+public class Lista10_exercicio1b {
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
         
@@ -19,5 +23,3 @@ public class Lista10_exercicio1_copy {
         leitor.close();
     }
 }
-/*72) Faça um programa que receba dez números e armazene em uma lista. Em seguida percorra toda a lista mostrando 
-apenas os números que cujo valor seja superior a 10. */

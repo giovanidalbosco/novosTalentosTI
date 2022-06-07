@@ -1,3 +1,6 @@
+/* Elabore um programa que apresente no final o somatório dos
+valores pares existentes na faixa de 1 até 500. */
+
 public class Lista8_exercicio2 {
     public static void main(String[] args) {
         int a = 0;
@@ -13,4 +16,3 @@ public class Lista8_exercicio2 {
 
     }
 }
-/*56) Elabore um programa que apresente no final o somatório dos valores pares existentes na faixa de 1 até 500.*/

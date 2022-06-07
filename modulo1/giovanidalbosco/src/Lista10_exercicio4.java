@@ -1,3 +1,8 @@
+/* Faça um programa que receba dez números e armazene em uma
+lista. Em seguida calcule a soma de todos os números percorrendo
+novamente a lista. Apresente a soma e em seguida a média baseada
+na soma e no número de números armazenados. */
+
 import java.util.Scanner;
 
 public class Lista10_exercicio4 {
@@ -20,6 +25,3 @@ public class Lista10_exercicio4 {
         leitor.close();
     }
 }
-/*75) Faça um programa que receba dez números e armazene em uma lista. Em seguida calcule a soma de todos os números 
-percorrendo novamente a lista. Apresente a soma e em seguida a média baseada na soma e no número de números 
-armazenados. */

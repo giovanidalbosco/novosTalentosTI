@@ -1,3 +1,9 @@
+/* Escreva um algoritmo que calcule o valor de uma chamada de
+telefone. Deverá ser informado a quantidade de minutos falados
+durante a ligação além de sua origem. Considere que uma ligação
+“local” custa R$0,02, ligação “intermunicipal” R$0,08 e
+“interestadual” R$0,10. */
+
 import java.util.Scanner;
 
 public class Lista6_exercicio6 {
@@ -28,6 +34,3 @@ public class Lista6_exercicio6 {
         leitor.close();
     }
 }
-/*44)Escreva um algoritmo que calcule o valor de uma chamada de telefone. Deverá ser informado a quantidade de 
-minutos falados durante a ligação além de sua origem. Considere que uma ligação “local” custa R$0.020, ligação 
-“intermunicipal” R$0,08 e “interestadual” R$0,1.*/

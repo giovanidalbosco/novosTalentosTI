@@ -1,3 +1,10 @@
+/* Faça um programa que mostre o menu de opções a seguir, receba
+a opção do usuário e os dados necessáriospara executar cada
+operação. Menu de opções:
+1. Somar dois números
+2. Raiz quadrada de um número
+Solicite ao usuário digitar a opção desejada */
+
 import java.util.Scanner;
 import java.lang.Math;
 

@@ -1,5 +1,12 @@
+/* 1) Faça um programa que receba um número real, encontre e
+mostre:
+- a parte inteira desse número;
+- a parte fracionária desse número;
+- o arredondamento desse número. */
+
 import java.lang.Math;
 import java.util.Scanner;
+
 public class Lista2_exercicio1 {
     public static void main(String[] args) {
         System.out.println("Digite um número real:");

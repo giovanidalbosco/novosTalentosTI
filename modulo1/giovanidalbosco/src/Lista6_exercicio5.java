@@ -1,5 +1,8 @@
+/* Escreva um algoritmo que calcule o numero de prateleiras
+necessárias para guardar uma quantidade informada de livros.
+Considerando que em média uma prateleira comporta 32 livros. */
+
 import java.util.Scanner;
-import java.lang.Math;
 
 public class Lista6_exercicio5 {
     public static void main(String[] args) {
@@ -14,5 +17,3 @@ public class Lista6_exercicio5 {
         leitor.close();
     }
 }
-/*43)Escreva um algoritmo que calcule o numero de prateleiras necessárias para guardar uma quantidade informada de 
-livros. Considerando que em média uma prateleira comporta 32 livros.*/

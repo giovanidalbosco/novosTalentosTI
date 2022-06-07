@@ -1,3 +1,6 @@
+/* Exercício 5) Construa um programa que mostre o percentual que
+uma despesa mensal representa do seu salário total. */
+
 import java.util.Scanner;
 
 public class Lista1_exercicio5 {

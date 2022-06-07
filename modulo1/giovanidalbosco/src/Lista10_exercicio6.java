@@ -1,3 +1,8 @@
+/* Faça um programa que receba dez números e armazene em uma
+lista. Em seguida solicite um outro número e armazene em uma
+variável chamada multiplicador. Percorra todo a lista e
+multiplique cada número pelo multiplicador e apresente em tela. */
+
 import java.util.Scanner;
 import java.util.Arrays;
 
@@ -23,6 +28,3 @@ public class Lista10_exercicio6 {
         leitor.close();
     }
 }
-/*77) Faça um programa que receba dez números e armazene em uma lista. Em seguida solicite um outro número e armazene 
-em uma variável chamada multiplicador. Percorra todo a lista e multiplique cada número pelo multiplicador e 
-apresente em tela. */

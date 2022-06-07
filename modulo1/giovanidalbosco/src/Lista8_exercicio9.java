@@ -1,3 +1,14 @@
+/* Faça um programa que receba 'vários números, calcule e mostre:
+- a soma dos números digitados;
+- a quantidade de números digitados;
+- a média dos números digitados; 
+- o maior número digitado;
+- o menor número digitado;
+- a média dos números pares;
+- a porcentagem dos números ímpares entre todos os números
+digitados. 
+Finalize a entrada de dados com a digitação do número 30000. */
+
 import java.util.Scanner;
 
 public class Lista8_exercicio9 {
@@ -50,12 +61,3 @@ public class Lista8_exercicio9 {
         leitor.close(); //fica com aviso porque meu programa não termina aqui?
     }
 }
-/*63) Faça um programa que receba 'vários números, calcule e mostre:
-- a soma dos números digitados;
-- a quantidade de números digitados;
-- a média dos números digitados; 
-- o maior número digitado;
-- o menor número digitado;
-- a média dos números pares;
-- a porcentagem dos números ímpares entre todos os números digitados.
-Finalize a entrada de dados com a digitação do número 30000.*/

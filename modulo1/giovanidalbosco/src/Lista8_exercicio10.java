@@ -1,3 +1,11 @@
+/* Faça um algoritmo que calcule a multiplicação de dois números
+inteiros sem utilizar o operador “*”. Em vez disso, utilize
+apenas o operador de adição “+”. Para implementar esse algoritmo,
+devemos lembrar que qualquer multiplicação pode ser expressa por
+meio de somas. Por exemplo, o resultado da expressão 6 * 3 é o
+mesmo que 6 + 6 + 6 ou 3 + 3 + 3 + 3 + 3 + 3. Ou seja, soma-se um
+elemento com ele próprio o número de vezes do segundo elemento. */
+
 import java.util.Scanner;
 
 public class Lista8_exercicio10 {
@@ -22,7 +30,3 @@ public class Lista8_exercicio10 {
         leitor.close();
     }
 }
-/*64) Faça um algoritmo que calcule a multiplicação de dois números inteiros sem utilizar o operador “*”. Em vez disso,
-utilize apenas o operador de adição “+”. Para implementar esse algoritmo, devemos lembrar que qualquer multiplicação
-pode ser expressa por meio de somas. Por exemplo, o resultado da expressão 6 * 3 é o mesmo que 6 + 6 + 6 
-ou 3 + 3 + 3 + 3 + 3 + 3. Ou seja, soma-se um elemento com ele próprio o número de vezes do segundo elemento.*/

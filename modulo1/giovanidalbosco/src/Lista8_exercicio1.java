@@ -1,3 +1,6 @@
+/* Faça um programa que calcule a soma dos números inteiros de
+1 a 100. */
+
 public class Lista8_exercicio1 {
     public static void main(String[] args) {
         int a = 0;
@@ -10,4 +13,3 @@ public class Lista8_exercicio1 {
 
     }
 }
-/*Faça um programa que calcule a soma dos números inteiros de 1 a 100.*/

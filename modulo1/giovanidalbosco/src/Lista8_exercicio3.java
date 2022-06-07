@@ -1,3 +1,8 @@
+/*57) Faça um programa que leia um valor N inteiro e positivo.
+Calcule e mostre o valor de E, conforme a fórmula a seguir:
+
+E = 1 + 1/(1!) + 1/(2!) + 1/(3!) + ... + 1/(N!) */
+
 import java.util.Scanner;
 
 public class Lista8_exercicio3 {
@@ -20,7 +25,3 @@ public class Lista8_exercicio3 {
         leitor.close();
     }
 }
-/*57) Faça um programa que leia um valor N inteiro e positivo. Calcule e mostre o valor de E, conforme a fórmula a 
-seguir:
-
-E = 1 + 1/(1!) + 1/(2!) + 1/(3!) + ... + 1/(N!)*/

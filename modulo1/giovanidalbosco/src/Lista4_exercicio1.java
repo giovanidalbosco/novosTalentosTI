@@ -1,3 +1,6 @@
+/* Faça um programa que receba a idade de uma pessoa e mostre a
+mensagem de maioridade ou não. */
+
 import java.util.Scanner;
 
 public class Lista4_exercicio1 {

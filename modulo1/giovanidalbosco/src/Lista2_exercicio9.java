@@ -1,3 +1,7 @@
+/* 9) Faça um programa que receba o valor do salario mínimo e o
+valor do salário de um funcionário, calcule e mostre a quantidade
+de salários mínimos que esses funcionário ganha. */
+
 import java.util.Scanner;
 
 public class Lista2_exercicio9 {

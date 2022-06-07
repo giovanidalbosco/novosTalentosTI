@@ -1,3 +1,7 @@
+/* Faça um programa que receba dez números e armazene em uma
+lista. Em seguida conte quantos números são impar e quantos são
+par. Apresente os contadores na tela. */
+
 import java.util.Scanner;
 
 public class Lista10_exercicio2 {
@@ -21,5 +25,3 @@ public class Lista10_exercicio2 {
         leitor.close();
     }
 }
-/*73) Faça um programa que receba dez números e armazene em uma lista. Em seguida conte quantos números são impar e 
-quantos são par. Apresente os contadores na tela. */

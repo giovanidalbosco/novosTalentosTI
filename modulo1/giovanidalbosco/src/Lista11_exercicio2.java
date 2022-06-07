@@ -1,3 +1,7 @@
+/* Faça um programa que carregue dois vetores de dez elementos
+numéricos cada um e mostre um vetor resultante da intercalação
+desses dois vetores. */
+
 import java.util.Arrays;
 
 public class Lista11_exercicio2 {
@@ -17,5 +21,3 @@ public class Lista11_exercicio2 {
         System.out.println(String.format("Vetor intercalado: %s", Arrays.toString(vetor3)));
     }
 }
-/*80) Faça um programa que carregue dois vetores de dez elementos numéricos cada um e mostre um vetor resultante da 
-intercalação desses dois vetores. */

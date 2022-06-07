@@ -1,3 +1,39 @@
+/* Faça um UNICO programa em que receba o nome, o salário-base e
+o tempo de serviço de um funcionário. 
+ 
+Calcule e mostre TODOS os item abaixo em um UNICO PROGRAMA:
+
+a. O imposto que esta na tabela a seguir:
+Salário Base                                         |   % de imposto sobre Salário Base
+-----------------------------------------------------+----------------------------------------
+Menor R$200,00 (inclusive)                           |             Isento
+Maior que R$200,00 até R$ 450,00 (inclusive)         |               3%
+Entre R$450,00 e R$ 700,00                           |               8%
+Igual a R$ 700,00                                    |              10%
+Maior que R$ 700,00                                  |              12%
+
+b. A Gratificação conforme a tabela a seguir:
+Salário Base                    |Tempo de Serviço                   |Gratificação
+--------------------------------+-----------------------------------+-----------------------------------------
+Superior a R$500,00             |Até 3 anos (inclusive)             |2% do salário base mais R$ R$ 50,00 reais
+                                +-----------------------------------+-----------------------------------------
+                                |Mais de 3 anos                     |3% do salário base mais R$ 60,00 reais
+--------------------------------+-----------------------------------+-----------------------------------------
+Até R$ 500,00 (inclusive)       |Até 3 anos (inclusive)             |5% do salário base mais R$ 23 reais
+                                +-----------------------------------+-----------------------------------------
+                                |Entre 3 e 6 anos                   |6% do salário base mais R$ 35,00 reais
+                                +-----------------------------------+-----------------------------------------
+                                |De 6 anos para cima (inclusive)    |10% do salário base mais R$ 33 reais
+
+c. Calcule o valor do auxilio alimentação:
+Tempo de Serviço             |Valor do auxilio alimentação
+-----------------------------+----------------------------
+Até 10 anos (inclusive)      |4% salário Base
+-----------------------------+----------------------------
+Mais de 10 anos              |6% salário Base
+
+d. Calcule o salário líquido, subtraindo o imposto e somando a gratificação, o auxilio alimentação ao salário base. */
+
 import java.util.Scanner;
 
 public class Lista7_exercicio3 {
@@ -54,37 +90,3 @@ public class Lista7_exercicio3 {
         leitor.close();
     }
 }
-/*53)Faça um UNICO programa em que receba o nome, o salário-base e o tempo de serviço de um funcionário. 
- 
-Calcule e mostre TODOS os item abaixo em um UNICO PROGRAMA:
-a. O imposto que esta na tabela a seguir:
-
-Salário Base                                         |   % de imposto sobre Salário Base
------------------------------------------------------+----------------------------------------
-Menor R$200,00 (inclusive)                           |             Isento
-Maior que R$200,00 até R$ 450,00 (inclusive)         |               3%
-Entre R$450,00 e R$ 700,00                           |               8%
-Igual a R$ 700,00                                    |              10%
-Maior que R$ 700,00                                  |              12%
-
-b. A Gratificação conforme a tabela a seguir:
-Salário Base                    |Tempo de Serviço                   |Gratificação
---------------------------------+-----------------------------------+-----------------------------------------
-Superior a R$500,00             |Até 3 anos (inclusive)             |2% do salário base mais R$ R$ 50,00 reais
-                                +-----------------------------------+-----------------------------------------
-                                |Mais de 3 anos                     |3% do salário base mais R$ 60,00 reais
---------------------------------+-----------------------------------+-----------------------------------------
-Até R$ 500,00 (inclusive)       |Até 3 anos (inclusive)             |5% do salário base mais R$ 23 reais
-                                +-----------------------------------+-----------------------------------------
-                                |Entre 3 e 6 anos                   |6% do salário base mais R$ 35,00 reais
-                                +-----------------------------------+-----------------------------------------
-                                |De 6 anos para cima (inclusive)    |10% do salário base mais R$ 33 reais
-
-c. Calcule o valor do auxilio alimentação:
-Tempo de Serviço             |Valor do auxilio alimentação
------------------------------+----------------------------
-Até 10 anos (inclusive)      |4% salário Base
------------------------------+----------------------------
-Mais de 10 anos              |6% salário Base
-
-d. Calcule o salário líquido, subtraindo o imposto e somando a gratificação, o auxilio alimentação ao salário base. */
