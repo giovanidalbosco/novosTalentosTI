@@ -12,11 +12,11 @@ import org.junit.jupiter.api.Test;
 public class CalculadoraTest {
     private Calculadora calc;
 
-    @BeforeEach
+    @BeforeEach // antes de cada teste será executado este método
     public void paraCada() {
         calc = new Calculadora();
     }
-    // é uma boa prática ter somente uma asserção por método
+    // é uma boa prática ter somente uma asserção(assert) por método
 
     @DisplayName("Testa soma do valor dois com dois")
     @Test // anotation 

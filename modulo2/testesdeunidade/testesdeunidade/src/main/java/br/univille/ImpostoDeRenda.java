@@ -15,7 +15,10 @@ public class ImpostoDeRenda {
 
     public float calcPercIRPF(float rendimentoMes) {
         float percIRPF = 0f;
-        if(rendimentoMes >= 1903.99 && rendimentoMes <= 2826.65) {
+        
+        if(rendimentoMes <= 1903.99) {
+            
+        } else if(rendimentoMes <= 2826.65) {
             percIRPF = 7.50f;
         } else if(rendimentoMes <= 3751.05) {
             percIRPF = 15.0f;
@@ -44,10 +47,8 @@ public class ImpostoDeRenda {
 
         float valorIRPF = rendimentoTotal * calcPercIRPF(calcRendMes());
 
-        valorIRPFFinal = valorIRPF - getV
+        float valorIRPFFinal = valorIRPF - valorImpostoRetidoNaFonte;
 
+        return valorIRPFFinal;
     }
-
-
-    
 }
