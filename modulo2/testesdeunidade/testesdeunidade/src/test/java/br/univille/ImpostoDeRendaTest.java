@@ -45,4 +45,15 @@ public class ImpostoDeRendaTest {
         assertEquals(0.275f, IRPF.calcPercIRPF(5000f));
     }
 
+    @DisplayName("Teste de calculo do rendimento por mês")
+    @Test
+    public void testeCalculoRendimentoPorMes() {
+        Rendimento rendimento = new Rendimento("salario", 6000);
+        Rendimento rendimento2 = new Rendimento("venda carro", 30000);
+        IRPF.getListaRendimentos().add(rendimento);
+        IRPF.getListaRendimentos().add(rendimento2);
+        
+        assertEquals(3000, IRPF.calcRendMes());
+    }
+
 }
