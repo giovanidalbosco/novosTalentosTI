@@ -40,10 +40,12 @@ public class ImpostoDeRenda {
     }
 
     public float calculaValorIRPF() {
-        float rendimentoTotal = 0f;
+        float rendimentoTotal = calcRendMes() * 12f;
+        /*
         for(Rendimento rendimento : getListaRendimentos()) {
             rendimentoTotal += rendimento.getValor();
         }
+        */
 
         float valorIRPF = rendimentoTotal * calcPercIRPF(calcRendMes());
 

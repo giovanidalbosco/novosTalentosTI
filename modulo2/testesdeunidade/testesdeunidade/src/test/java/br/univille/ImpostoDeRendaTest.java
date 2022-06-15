@@ -52,8 +52,21 @@ public class ImpostoDeRendaTest {
         Rendimento rendimento2 = new Rendimento("venda carro", 30000);
         IRPF.getListaRendimentos().add(rendimento);
         IRPF.getListaRendimentos().add(rendimento2);
+        IRPF.setValorImpostoRetidoNaFonte(1000f);
         
         assertEquals(3000, IRPF.calcRendMes());
+    }
+
+    @DisplayName("Teste de calculo do valor final do IRPF")
+    @Test
+    public void testeCalculoValorFinalIRPF() {
+        Rendimento rendimento = new Rendimento("salario", 6000);
+        Rendimento rendimento2 = new Rendimento("venda carro", 30000);
+        IRPF.getListaRendimentos().add(rendimento);
+        IRPF.getListaRendimentos().add(rendimento2);
+        IRPF.setValorImpostoRetidoNaFonte(1000f);
+        
+        assertEquals(4400f, IRPF.calculaValorIRPF());
     }
 
 }
