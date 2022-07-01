@@ -30,4 +30,8 @@ public class ClienteDAO {
         }
         return lista;
     }
+
+    public void save(Cliente cliente) {
+        
+    }
 }
