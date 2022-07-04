@@ -2,10 +2,10 @@ package sistema.service;
 
 import sistema.dao.ClienteDAO;
 import sistema.entity.Cliente;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+
 
 public class ClienteService {
     //private ArrayList<Cliente> listaClientes = new ArrayList<>();
@@ -20,14 +20,13 @@ public class ClienteService {
         calendario.set(2022, 05, 12);
         cliente1.setDataNascimento(calendario.getTime());
         listaClientes.add(cliente1);
-
         var cliente2 = new Cliente();
         cliente2.setId(2);
         cliente2.setNome("Luizinho");
         cliente2.setCPF("222.222.222-22");
         calendario.set(2020, 03, 15);
         cliente2.setDataNascimento(calendario.getTime());
-        listaClientes.add(cliente2);*/   
+        listaClientes.add(cliente2);*/ 
     }
 
     public ArrayList<Cliente> getAllClientes() {
@@ -36,6 +35,12 @@ public class ClienteService {
 
     public Cliente save(Cliente cliente) {
         //listaClientes.add(cliente);
+        clienteDAO.save(cliente);
         return cliente;
     }
+
+    public void remove(Cliente cliente) {
+        clienteDAO.delete(cliente.getId());
+    }
+
 }

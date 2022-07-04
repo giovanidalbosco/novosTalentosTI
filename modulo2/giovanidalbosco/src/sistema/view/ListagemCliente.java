@@ -3,6 +3,7 @@ package sistema.view;
 import javax.swing.*;
 
 import sistema.controller.ListagemClienteController;
+import sistema.entity.Cliente;
 import sistema.model.TabelaClienteModel;
 
 import java.awt.Color;
@@ -15,11 +16,17 @@ public class ListagemCliente extends JFrame {
     private JButton btnChange = new JButton("Alterar");
     private JButton btnDelete = new JButton("Excluir");
 
-    private ListagemClienteController controller = new ListagemClienteController();
+    private ListagemClienteController controller = new ListagemClienteController(this);
 
     private TabelaClienteModel tabelaModel = new TabelaClienteModel(controller);
     private JTable table = new JTable(tabelaModel);
     
+    public Cliente getCliente() {
+        if(table.getSelectedRow() > 0) {
+            return controller.getAllClientes().get(table.getSelectedRow());   
+        }
+        return null;
+    }
 
     public ListagemCliente() {
         setSize(500,400);
@@ -28,6 +35,10 @@ public class ListagemCliente extends JFrame {
         criaPaineis();
         criaBotoes();
         setVisible(true);
+    }
+
+    public void atualizaTabela(){
+        tabelaModel.fireTableDataChanged();
     }
 
     private void criaPaineis() {

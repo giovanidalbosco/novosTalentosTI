@@ -43,6 +43,8 @@ public class FormularioClienteController implements ActionListener{
             var cliente = formCliente.getCliente();
             formCliente.atualiza(cliente);
             validador(cliente);
+            formCliente.dispose();
+
         } catch(ValorInvalidoException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(),"", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
@@ -64,10 +66,10 @@ public class FormularioClienteController implements ActionListener{
         /*
         if(cliente.getDataNascimento() == null || cliente.getDataNascimento().isEmpty()) {
             throw new ValorInvalidoException("A data de nascimento não pode ser deixado em branco", null, "Data");
-        }*/
+        }
         if(cliente.getId() / 1 == cliente.getId()) {
             throw new ValorInvalidoException("O ID não pode ser diferente de 5", null, "ID");
-        }
+        }*/
     }
     //criar uma validação para cada campo de tela do cliente
     //alterar a mensagem de tela JOptionPane: transformar ela numa mensagem de erro - ok

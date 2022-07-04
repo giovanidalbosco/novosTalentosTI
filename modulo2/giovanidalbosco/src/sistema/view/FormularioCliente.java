@@ -26,8 +26,8 @@ public class FormularioCliente extends JDialog {
     private JPanel jpnBotao = new JPanel();
     private JButton btnOK = new JButton("OK");
     private JButton btnCancelar = new JButton("Cancelar");
-    private JTextField txtId = new JTextField();
-    private JTextField txtNome = new JTextField();
+    private JTextField txtId = new JTextField(4);
+    private JTextField txtNome = new JTextField(40);
     private JFormattedTextField txtCPF;
     private MaskFormatter mascaraCPF;
     private JFormattedTextField txtDataNascimento;
