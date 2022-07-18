@@ -56,7 +56,22 @@ public class FormularioCliente extends JDialog {
         setModal(true);
         criarPaineis(); //não esquece de chamar o metodo aqui!!!
         criarBotoes();
+        atualizaCampos();
         setVisible(true);
+    }
+
+    private void atualizaCampos() {
+        if(this.cliente != null) {
+            txtId.setText(String.valueOf(this.cliente.getId()));
+            txtNome.setText(this.cliente.getNome());
+            txtCPF.setText(this.cliente.getCPF());
+            try {
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                txtDataNascimento.setText(sdf.format(this.cliente.getDataNascimento()));
+            } catch(Exception e) {
+
+            }
+        }
     }
     
     private void criarPaineis() {
