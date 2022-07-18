@@ -1,0 +1,12 @@
+html{
+    background-color: rgb(180, 180, 180);
+    scroll-behavior: smooth;
+}
+
+h1 {
+    font-family: sans-serif;
+    border: 1px solid;
+    text-align: center;
+}
+
+
