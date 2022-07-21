@@ -28,8 +28,8 @@ public class TesteBanco01 {
             ps.setString(1, "%"+busca+"%");
             try(ResultSet rs = ps.executeQuery()) {
                 while(rs.next()) {
-                    System.out.print(rs.getInt("numero"));
-                    System.out.println(rs.getString("nome"));
+                    System.out.print(String.format("Número: %d | ", rs.getInt("numero")));
+                    System.out.println(String.format("Nome: %s", rs.getString("nome")));
                 }
             }
             
