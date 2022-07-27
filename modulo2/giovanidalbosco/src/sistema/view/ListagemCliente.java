@@ -17,7 +17,6 @@ public class ListagemCliente extends JFrame {
     private JButton btnDelete = new JButton("Excluir");
 
     private ListagemClienteController controller = new ListagemClienteController(this);
-
     private TabelaClienteModel tabelaModel = new TabelaClienteModel(controller);
     private JTable table = new JTable(tabelaModel);
     
@@ -29,12 +28,12 @@ public class ListagemCliente extends JFrame {
     }
 
     public ListagemCliente() {
-        setSize(500,400);
-        setTitle("Listagem de Clientes");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        criaPaineis();
-        criaBotoes();
-        setVisible(true);
+        setSize(500,400); //seta tamanho da janela
+        setTitle("Listagem de Clientes"); //seta o título da janela
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //indica como ação padrão 'fechar janela' para o botão 'X' de fechar janela
+        criaPaineis(); //chama o metodo criaPaineis
+        criaBotoes(); //chama o metodo criaBotoes
+        setVisible(true); //seta a janela para ficar visivel
     }
 
     public void atualizaTabela(){
