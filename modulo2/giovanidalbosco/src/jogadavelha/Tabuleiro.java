@@ -8,8 +8,6 @@ import java.util.HashMap;
 import java.lang.StringBuilder;
 
 public class Tabuleiro {
-    private String tabuleiro;
-    private Jogador id;
 
     public String desenharTabuleiro(ArrayList<Integer> jogadasEscolhidas) {
         StringBuilder sb = new StringBuilder();
@@ -43,7 +41,7 @@ public class Tabuleiro {
             }  
         }
 
-        int jogada = 1;
+        int posicoesDisponiveis = 1;
         int jogador = 0;
         int x = posicoes.get(jogadasEscolhidas.get(0)).get(0);
         int y = posicoes.get(jogadasEscolhidas.get(0)).get(1);
@@ -52,7 +50,7 @@ public class Tabuleiro {
                 for (int j = 0; j < 5; j++) { //desenha as colunas
                     if (j % 2 == 0) { //posição da coluna par
                         for (int k = 0; k < jogadasEscolhidas.size(); k++) {
-                            if (jogada == jogadasEscolhidas.get(k)) { //verifica as posições já jogadas
+                            if (posicoesDisponiveis == jogadasEscolhidas.get(k)) { //verifica as posições já jogadas
                                 x = posicoes.get(jogadasEscolhidas.get(k)).get(0);
                                 y = posicoes.get(jogadasEscolhidas.get(k)).get(1);
                                 jogador = jogadasEscolhidas.indexOf(jogadasEscolhidas.get(k)); //indices pares indicam jogadas do jogador 1 e indices impares indicam jogadas do jogador 2
@@ -66,9 +64,9 @@ public class Tabuleiro {
                                 sb.append(" O "); //desenha O para o jogador 2
                             }
                         } else {
-                            sb.append(String.format(" %d ", jogada)); //desenha as posições restantes que ainda não foram jogadas
+                            sb.append(String.format(" %d ", posicoesDisponiveis)); //desenha as posições restantes que ainda não foram jogadas
                         }
-                        jogada++; //passa para a próxima jogada
+                        posicoesDisponiveis++; //passa para a próxima jogada
                         
                     } else { //posição da coluna impar
                         sb.append("|"); //desenha os separadores verticais
@@ -87,10 +85,4 @@ public class Tabuleiro {
         } 
         return sb.toString();
     }
-
-
-
-
-
-
 }
