@@ -1,0 +1,30 @@
+/*seletor por TAG*/
+body {
+    background-color: aqua;
+}
+
+/*seletor por classe*/
+a.corrente {
+    background-color: bisque;
+}
+
+.corrente {
+    font-size: 20px;
+}
+
+.corrente:hover {
+    background-color: white;
+}
+
+/*seletor por ID*/
+h2#texto {
+    font-size: 30px;
+}
+
+#texto {
+    background-color: blue;
+}
+
+ul li {
+    background-color: orangered;
+}
