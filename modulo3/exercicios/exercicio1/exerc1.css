@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(35, 50, 106);
+}
+
+.container {
+    display: grid;
+    /*grid-template-columns: 1fr 1fr;*/
+    padding: 40px;
+    grid-gap: 30px;
+    grid-template:
+        'box1 box1'
+        'box2 box2'
+        'box3 box4'
+        'box5 box5';
+    border: solid 3px rgb(250, 187, 35);
+    width: 700px;
+    height: 750px;
+}
+
+.container > div {
+    border: solid 1px rgb(250, 187, 35);
+}
+
+.box1 {
+    grid-area: box1;
+    height: 80px;
+    background-color: rgb(237, 30, 54);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.box1 > p {
+    font-size: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(250, 187, 35);
+}
+
+.box2 {
+    grid-area: box2;
+    height: 250px;
+    background-image: url("./imagens/kicktyre.gif");
+    background-size: contain;
+}
+
+.box3 {
+    grid-area: box3;
+    width: 330px;
+    height: 250px;
+    background-color: rgb(237, 30, 54);
+}
+.box3 > article {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+    color: rgb(250, 187, 35);
+}
+
+.box4 {
+    grid-area: box4;
+    width: 330px;
+    height: 250px;
+}
+
+.box5 {
+    grid-area: box5;
+    height: 50px;
+    background-color: rgb(237, 30, 54);
+}
+.box > p {
+    color: rgb(250, 187, 35);
+}
+
