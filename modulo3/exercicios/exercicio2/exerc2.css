@@ -1,0 +1,98 @@
+body {
+    background-image: url('https://th.bing.com/th/id/R.1208a21256ea3eb49d5e838f2a29b876?rik=v3AxQXF%2fG44c%2fQ&pid=ImgRaw&r=0');
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*
+    Como fazer degrade:
+    background: rgb(253,187,45);
+    background: linear-gradient(0deg, rgba(253,187,45,0) 0%, rgba(240,187,54,0) 53%, rgba(46,252,255,1) 100%);*/
+}
+
+.container {
+    display: grid;
+    grid-template:
+        'box1'
+        'subarea'
+        'box2';
+    grid-gap: 30px;
+    border: solid 1px aquamarine;
+    padding: 30px;
+    width: 850px;    
+}
+
+.container2 {
+    grid-area: subarea;
+    display: grid;
+    grid-template:
+        'box3 box4'
+        'box5 box6';
+    grid-gap: 10px 100px;
+}
+
+.container2 > div {
+    border: solid 1px rgb(48, 139, 109);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+}
+
+div > article {
+    margin: 20px;
+    font-size: 20px;
+    font-family: 'Arial';
+    text-align: justify;
+    color: rgb(22, 60, 63);
+}
+
+.box1 {
+    grid-area: box1;
+    background-image: url('https://modernciso.com/wp-content/uploads/2017/11/iStock-602302734-1-1080x675.jpg');
+    background-size: cover;
+    border: solid 1px rgb(48, 139, 109);
+    height: 350px;
+    position: relative;
+    text-align: center;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    border: solid;
+    background-color: rgb(211, 255, 241);
+    color: rgb(22, 60, 63);
+    border: 1px solid rgb(22, 60, 63);
+    width: 200px;
+    font-family: 'Arial';
+  }
+
+.box2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    grid-area: box2;
+    border: solid 1px rgb(48, 139, 109);
+    height: 50px;
+}
+.box2 > article {
+    font-size: 30px;
+}
+
+.box3 {
+    grid-area: box3;
+}
+
+.box4 {
+    grid-area: box4;
+}
+
+.box5 {
+    grid-area: box5;
+}
+
+.box6 {
+    grid-area: box6;
+}

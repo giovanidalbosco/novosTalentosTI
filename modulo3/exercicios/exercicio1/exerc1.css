@@ -7,7 +7,6 @@ body {
 
 .container {
     display: grid;
-    /*grid-template-columns: 1fr 1fr;*/
     padding: 40px;
     grid-gap: 30px;
     grid-template:
@@ -51,13 +50,16 @@ body {
     width: 330px;
     height: 250px;
     background-color: rgb(237, 30, 54);
-}
-.box3 > article {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+.box3 > article {
     font-size: 20px;
+    margin-left: 2px;
+    margin-right: 2px;
     text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(250, 187, 35);
 }
 
@@ -68,11 +70,16 @@ body {
 }
 
 .box5 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     grid-area: box5;
     height: 50px;
     background-color: rgb(237, 30, 54);
 }
-.box > p {
+.box5 > p {
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(250, 187, 35);
 }
 
