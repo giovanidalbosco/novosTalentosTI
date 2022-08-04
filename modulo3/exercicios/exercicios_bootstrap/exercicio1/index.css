@@ -1,0 +1,8 @@
+.navbar-custom {
+    background-color: gainsboro;
+}
+
+.navbar-brand, .nav-link {
+    color: blue;
+}
+
