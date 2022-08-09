@@ -9,7 +9,8 @@ body {
 .corpo {
     background: rgba(245, 245, 245, 0.3);
     display: grid;
-    grid-template:
+    grid-template-columns: 1fr 1fr 1fr 1.5fr;
+    grid-template-areas:
     'tela tela tela tela'
     'botao7 botao8 botao9 botaoMais'
     'botao4 botao5 botao6 botaoMenos'
