@@ -1,0 +1,53 @@
+//closure
+(function() {
+    let btnInserir = document.getElementById("btninserir");
+    let txtProduto = document.getElementById("txtproduto");
+    let itens = document.getElementById("itens");
+    //let btnExcluir = document
+    let lista = [];
+    btnInserir.onclick = click_btninserir;
+    
+
+
+    function click_btninserir() {
+        adiciona(txtProduto.value);
+    }
+
+    function click_btnexcluir() {
+        exclui(this.id);
+    }
+
+    function adiciona(produto) {
+        lista.push(produto);
+        atualiza_itens();
+    }
+
+    function exclui(produto) {
+        lista.splice(produto,1)
+        atualiza_itens();
+    }
+
+    function atualiza_itens() {
+        itens.innerHTML = "";
+        for (let i in lista) {
+            let umItem = lista[i];
+            let li = document.createElement("li");
+            li.appendChild(document.createTextNode(umItem));
+            li.id = umItem;
+            item = document.getElementById(li.id);
+            itens.appendChild(li);
+
+            let btn = document.createElement("button");
+            btn.textContent = "Excluir";
+            
+            itens.appendChild(btn);
+
+            btn.id = i
+            //let btnExcluir = document.getElementById("btnexcluir");
+            btn.onclick = click_btnexcluir;
+        }
+
+    }
+
+
+})();
