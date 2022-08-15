@@ -1,20 +1,79 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .container {
     display: grid;
-    grid-template:
+    grid-template-rows: 1fr 20fr 1fr;
+    grid-template-areas:
     'menu'
     'corpo'
     'rodape';
+    border: 1px solid;
+    height: 1fr;
+    max-width: 80%;
+    min-width: 50%;
+    width: 200px;
+    grid-gap: 1em;
+    padding: 1em;
+
+}
+
+.container > div {
     border: 1px solid;
 }
 
 .menu {
     grid-area: menu;
+    border: 1px solid;
 }
 
 .corpo {
     grid-area: corpo;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    'foto caixa1 caixa5'
+    '.    caixa2 caixa5'
+    '.    caixa3 caixa5'
+    '.    caixa4 caixa5';
+}
+
+.corpo > div {
+    border: 1px solid;
+}
+
+.foto {
+    grid-area: foto;
+    background-image: url("https://1.bp.blogspot.com/-sjbGDcBYNcs/WVMeIaFQARI/AAAAAAAA90Y/BUy7yGOFduEtbZlslht9PFccIAbwBKNkgCLcBGAs/w640/iron-maiden-comics-2.jpg");
+    background-position: 50%;
+    background-size: 30fr;
+}
+
+.caixa1 {
+    grid-area: caixa1;
+}
+
+.caixa2 {
+    grid-area: caixa2;
+}
+
+.caixa3 {
+    grid-area: caixa3;
+}
+
+.caixa4 {
+    grid-area: caixa4;
+}
+
+.caixa5 {
+    grid-area: caixa5;
 }
 
 .rodape {
     grid-area: rodape;
+    border: 1px solid;
 }

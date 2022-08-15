@@ -3,12 +3,10 @@
     let btnInserir = document.getElementById("btninserir");
     let txtProduto = document.getElementById("txtproduto");
     let itens = document.getElementById("itens");
-    //let btnExcluir = document
     let lista = [];
     btnInserir.onclick = click_btninserir;
+    itens.onload(localStorage.getItem("lista"))
     
-
-
     function click_btninserir() {
         adiciona(txtProduto.value);
     }
@@ -33,20 +31,19 @@
             let umItem = lista[i];
             let li = document.createElement("li");
             li.appendChild(document.createTextNode(umItem));
-            li.id = umItem;
-            item = document.getElementById(li.id);
+            //li.id = umItem;
+            //item = document.getElementById(li.id);
             itens.appendChild(li);
 
             let btn = document.createElement("button");
             btn.textContent = "Excluir";
+            li.appendChild(btn);
+            txtProduto.value = '';
             
-            itens.appendChild(btn);
-
             btn.id = i
-            //let btnExcluir = document.getElementById("btnexcluir");
             btn.onclick = click_btnexcluir;
         }
-
+        localStorage.setItem("lista", itens)
     }
 
 
