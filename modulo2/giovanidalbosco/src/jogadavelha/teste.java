@@ -62,16 +62,20 @@ public class teste {
             ArrayList<String> listaResultados = new ArrayList<>();
             Collections.addAll(listaResultados, "123","456","789","147","258","369","159","357"); //sequências de vitória
             for (String resultado: listaResultados) {
+                System.out.println(sb1_ordenada);
+                System.out.println(sb2_ordenada);
                 if (sb1_ordenada.indexOf(resultado) == 0) {
                     System.out.println ("Jogador 1 ganhou!");
                     System.exit(0);
                 } else if (sb2_ordenada.indexOf(resultado) == 0) {
                     System.out.println ("Jogador 2 ganhou!");
                     System.exit(0);
-                } else if (contador == 9) {
-                    System.out.println ("Empate!");
                 }
             }
+            /* 
+            if (contador == 9) {
+                System.out.println ("Empate!");
+            }*/
 
         }
             
