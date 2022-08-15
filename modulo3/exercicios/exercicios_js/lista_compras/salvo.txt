@@ -5,10 +5,6 @@
     let itens = document.getElementById("itens");
     let lista = [];
     btnInserir.onclick = click_btninserir;
-
-
-    lista.push(localStorage.getItem("lista"));
-    atualiza_itens();
     
     function click_btninserir() {
         adiciona(txtProduto.value);
@@ -45,12 +41,7 @@
             
             btn.id = i
             btn.onclick = click_btnexcluir;
-
-
-            
-            localStorage.setItem(i, umItem)
         }
-        
     }
 
 
