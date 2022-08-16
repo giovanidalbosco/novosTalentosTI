@@ -5,11 +5,8 @@
     let itens = document.getElementById("itens");
     let lista = [];
     btnInserir.onclick = click_btninserir;
+    onload = atualiza_itens;
 
-
-    lista.push(localStorage.getItem("lista"));
-    atualiza_itens();
-    
     function click_btninserir() {
         adiciona(txtProduto.value);
     }
@@ -20,18 +17,22 @@
 
     function adiciona(produto) {
         lista.push(produto);
+        localStorage.setItem(0, lista);
         atualiza_itens();
     }
 
     function exclui(produto) {
-        lista.splice(produto,1)
+        lista.splice(produto,1);
+        localStorage.setItem(0, lista);
         atualiza_itens();
     }
 
     function atualiza_itens() {
         itens.innerHTML = "";
-        for (let i in lista) {
-            let umItem = lista[i];
+        lista = localStorage.getItem(0).split(',');
+        for (let i = 0; i < localStorage.getItem(0).split(',').length; i++) {
+        //for (let i in lista) {
+            let umItem = localStorage.getItem(0).split(',')[i];
             let li = document.createElement("li");
             li.appendChild(document.createTextNode(umItem));
             //li.id = umItem;
@@ -45,13 +46,7 @@
             
             btn.id = i
             btn.onclick = click_btnexcluir;
-
-
-            
-            localStorage.setItem(i, umItem)
         }
-        
     }
-
 
 })();
