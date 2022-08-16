@@ -2,32 +2,32 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url('https://images6.alphacoders.com/409/409723.jpg');
+    background-size: cover;
 }
 
 .container {
     display: grid;
-    grid-template-rows: 1fr 20fr 1fr;
+    grid-template-rows: 1fr 10fr 1fr;
     grid-template-areas:
     'menu'
     'corpo'
     'rodape';
     border: 1px solid;
-    height: 1fr;
-    max-width: 80%;
-    min-width: 50%;
-    width: 200px;
+    height: 110vh;
+    width: 50vw;
     grid-gap: 1em;
     padding: 1em;
 
 }
 
-.container > div {
-    border: 1px solid;
-}
-
 .menu {
     grid-area: menu;
     border: 1px solid;
+    background-color: rgb(240, 248, 255, 0.3);
+    font-size: 1.5em;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
 }
 
 .corpo {
@@ -37,20 +37,35 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
     'foto caixa1 caixa5'
-    '.    caixa2 caixa5'
+    'foto caixa2 caixa5'
     '.    caixa3 caixa5'
     '.    caixa4 caixa5';
+    grid-gap: 10px;
+
 }
 
 .corpo > div {
     border: 1px solid;
+    background-color: rgb(240, 248, 255, 0.3);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
 }
+
+.corpo > .foto {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    
+}
+
 
 .foto {
     grid-area: foto;
     background-image: url("https://1.bp.blogspot.com/-sjbGDcBYNcs/WVMeIaFQARI/AAAAAAAA90Y/BUy7yGOFduEtbZlslht9PFccIAbwBKNkgCLcBGAs/w640/iron-maiden-comics-2.jpg");
-    background-position: 50%;
-    background-size: 30fr;
+    background-position: 40%;
+    background-size: 30em;
+    width: 80%;
+    height: 80%;
+
 }
 
 .caixa1 {
@@ -71,9 +86,18 @@ body {
 
 .caixa5 {
     grid-area: caixa5;
+    line-height: 3em;
+    
 }
 
 .rodape {
     grid-area: rodape;
     border: 1px solid;
+    background-color: rgb(240, 248, 255, 0.3);
+    font-size: 1.2em;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
