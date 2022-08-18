@@ -18,3 +18,10 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
+@media print
+{
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
