@@ -38,3 +38,7 @@
 - Pesquisar sobre lambda expressions
 - programação funcional
 - 
+
+## 30/08/2022
+
+- EcmaScript: https://www.w3schools.com/js/js_es6.asp
