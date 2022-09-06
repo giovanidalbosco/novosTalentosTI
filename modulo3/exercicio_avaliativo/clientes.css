@@ -1,0 +1,52 @@
+.container {
+    display: grid;
+    grid-template-areas:
+    '.'
+    'client1'
+    '.'
+    'client2'
+    '.'
+    'client3';
+    grid-gap: 10px;
+}
+
+.client1 {
+    grid-area: client1;
+    display: grid;
+    grid-template-areas:
+    'logo'
+    'descricao';
+    flex-direction: column;
+    align-items: center;
+}
+
+.client2 {
+    grid-area: client2;
+    display: grid;
+    grid-template-areas:
+    'logo'
+    'descricao';
+    flex-direction: column;
+    align-items: center;
+}
+
+.client3 {
+    grid-area: client3;
+    display: grid;
+    grid-template-areas:
+    'logo'
+    'descricao';
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    grid-area: logo;
+    margin: 0px auto;
+    height: 10em;
+}
+
+.descricao {
+    grid-area: descricao;
+    text-align: justify;
+}

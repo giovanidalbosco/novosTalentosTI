@@ -1,0 +1,75 @@
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-areas:
+    'serv1 img_sv1'
+    'img_sv2 serv2'
+    'serv3 img_sv3'
+    'img_sv4 serv4'
+    'serv5 img_sv5';
+    padding: 10px;
+    grid-gap: 1px;
+}
+
+.service1 {
+    grid-area: serv1;
+}
+
+.service2 {
+    grid-area: serv2;
+}
+
+.service3 {
+    grid-area: serv3;
+}
+
+.service4 {
+    grid-area: serv4;
+}
+
+.service5 {
+    grid-area: serv5;
+}
+
+.image-serv1 {
+    grid-area: img_sv1;
+    border-radius: 7px;
+    background-image: url("https://th.bing.com/th/id/OIP.8DhqrdK_enYQbi_7Saky2wHaE7?pid=ImgDet&rs=1");
+    background-position-x: center;
+    background-position-y: center;
+    background-size:cover;
+}
+
+.image-serv2 {
+    grid-area: img_sv2;
+    border-radius: 7px;
+    background-image: url('https://modernciso.com/wp-content/uploads/2017/11/iStock-602302734-1-1080x675.jpg');
+    background-size: cover;
+}
+
+.image-serv3 {
+    grid-area: img_sv3;
+    border-radius: 7px;
+    background-image: url("https://th.bing.com/th/id/OIP.CPrnQaov4-MnDb5kjcNpfwHaET?pid=ImgDet&rs=1");
+    background-position-x: center;
+    background-position-y: center;
+    background-size:cover;
+}
+
+.image-serv4 {
+    grid-area: img_sv4;
+    border-radius: 7px;
+    background-image: url("https://th.bing.com/th/id/R.3a0f5bddac397fc52ebe4fd7944c7989?rik=KBN7Hazarzu2eQ&riu=http%3a%2f%2ffiles.abovetopsecret.com%2ffiles%2fimg%2fik5d336207.jpg&ehk=ptjghBGeL7yqtW1pdlFkKn%2b85shlgLwOKbt5UZ2w3%2b4%3d&risl=&pid=ImgRaw&r=0");
+    background-position-x: center;
+    background-position-y: center;
+    background-size:cover;
+}
+
+.image-serv5 {
+    grid-area: img_sv5;
+    border-radius: 7px;
+    background-image: url("https://cdn.mundodastribos.com/2019/03/imagem-de-satelite-ao-vivo.jpg");
+    background-position-x: center;
+    background-position-y: center;
+    background-size:cover;
+}
