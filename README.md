@@ -42,3 +42,9 @@
 ## 30/08/2022
 
 - EcmaScript: https://www.w3schools.com/js/js_es6.asp
+
+##  08/09/2022
+
+- 12factor.net/pt_br/ --> leitura obrigatória
+- https://12factor.net/pt_br/dependencies
+- Nodemon --> npm i -G nodemon
