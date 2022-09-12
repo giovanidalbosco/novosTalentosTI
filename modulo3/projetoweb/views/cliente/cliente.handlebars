@@ -1,0 +1,30 @@
+<h1>Clientes</h1>
+<hr>
+<table class="table">
+    {{#each fakeData}}
+        <p>{{#each this}}
+            {{this}}
+        {{/each}}</p>
+    {{/each}}
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>Sexo</th>
+            <th>Telefone</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each fakeData}}
+        <tr>
+            {{#each this}}
+                <td>{{this}}</td>
+            {{/each}}
+            <td></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
