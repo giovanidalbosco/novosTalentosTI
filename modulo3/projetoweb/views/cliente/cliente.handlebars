@@ -1,12 +1,7 @@
 <h1>Clientes</h1>
 <hr>
+<a class="btn btn-primary" href="./clientes/novo">Novo</a>
 <table class="table">
-    {{#each fakeData}}
-        <p>{{#each this}}
-            {{this}}
-        {{/each}}</p>
-    {{/each}}
-
     <thead>
         <tr>
             <th>ID</th>
@@ -15,15 +10,22 @@
             <th>Sexo</th>
             <th>Telefone</th>
             <th></th>
+            
         </tr>
     </thead>
     <tbody>
         {{#each fakeData}}
         <tr>
-            {{#each this}}
+            {{!-- {{#each this}}
                 <td>{{this}}</td>
-            {{/each}}
-            <td></td>
+            {{/each}} --}}
+            <td>{{this.id}}</td>
+            <td>{{this.nome}}</td>
+            <td>{{this.endereco}}</td>
+            <td>{{this.sexo}}</td>
+            <td>{{this.telefone}}</td>
+            <td><a class="btn btn-primary" href="./clientes/editar">Alterar</a></td>
+            <td><a class="btn btn-danger">Excluir</a></td>
         </tr>
         {{/each}}
     </tbody>
