@@ -24,9 +24,28 @@
             <td>{{this.endereco}}</td>
             <td>{{this.sexo}}</td>
             <td>{{this.telefone}}</td>
-            <td><a class="btn btn-primary" href="./clientes/editar">Alterar</a></td>
-            <td><a class="btn btn-danger">Excluir</a></td>
+            <td><a class="btn btn-primary" href="./clientes/alterar/{{this.id}}">Alterar</a></td>
+            <td><button class="btn btn-danger" for="meumodal">Excluir</button></td>
         </tr>
         {{/each}}
     </tbody>
 </table>
+
+
+<div class="modal" tabindex="-1" id="meumodal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Excluir Cliente</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Está certo disso?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="btnsim">Sim Silvio!</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btncancelar">Não</button>
+      </div>
+    </div>
+  </div>
+</div>

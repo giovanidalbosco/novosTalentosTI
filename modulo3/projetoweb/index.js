@@ -38,44 +38,72 @@ app.get("/", function(req, res) {
     res.render('index');
 });
 
-context = {
-    fakeData: fakeData
-}
 
 app.get("/clientes", function(req, res) {
+
+    context = {
+        fakeData: fakeData
+    }
+
     res.render('cliente/cliente', context);
 });
 
 app.get("/clientes/novo", function(req, res) {
-    res.render('cliente/formcliente',);
+    res.render('cliente/formcliente');
 });
 
 app.post("/clientes/save", function(req, res) {
-    let maiorID = Math.max(...fakeData.map(o => o.id));
-
-    let novoCliente = {
-        id: maiorID + 1,
-        nome: req.body.nome,
-        endereco: req.body.endereco,
-        sexo: req.body.sexo,
-        telefone: req.body.telefone,
+    
+    if(req.body.nome === "") {
+        // res.redirect("/clientes");
+        res.render('cliente/formCLiente', {cliente: req.body})
+        return;
     }
-    fakeData.push(novoCliente);
+
+    let clienteAntigo = fakeData.find(x => x.id == req.body.id);
+
+    if(clienteAntigo != undefined) {
+        clienteAntigo.nome = req.body.nome;
+        clienteAntigo.endereco = req.body.endereco;
+        clienteAntigo.sexo = req.body.sexo;
+        clienteAntigo.telefone = req.body.telefone;
+    } else {
+        let maiorID = Math.max(...fakeData.map(o => o.id));
+        let novoCliente = {
+            id: maiorID + 1,
+            nome: req.body.nome,
+            endereco: req.body.endereco,
+            sexo: req.body.sexo,
+            telefone: req.body.telefone,
+        }
+
+        fakeData.push(novoCliente);
+    }
+
     res.redirect("/clientes");
 });
 
-app.post("/clientes/editar", function(req, res) {
-    // res.body.nome;
-    // res.render('cliente/formcliente',);
-    // let novoCliente = {
-    //     id: fakeData.length + 1,
-    //     nome: req.body.nome,
-    //     endereco: req.body.endereco,
-    //     sexo: req.body.sexo,
-    //     telefone: req.body.telefone,
-    // }
-    // fakeData.push(novoCliente);
-    // res.redirect("/clientes");
+app.get("/clientes/alterar/:id", function(req, res) {
+    let id = req.params['id'];
+    let umCliente = fakeData.find(x => x.id == id);
+
+    context = {
+        cliente: umCliente,
+    }
+
+    res.render('cliente/formcliente', context);
+});
+
+app.get("/clientes/deletar/:id", function(req,res) {
+    let id = req.params['id'];
+    id = parseInt(id) - 1;
+
+    fakeData.indexOf()
+
+    fakeData.splice(id,1);
+
+    res.redirect("/clientes");
+
 });
 
 app.listen(3000, () => {
