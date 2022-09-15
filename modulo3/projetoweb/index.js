@@ -94,13 +94,14 @@ app.get("/clientes/alterar/:id", function(req, res) {
     res.render('cliente/formcliente', context);
 });
 
-app.get("/clientes/deletar/:id", function(req,res) {
+app.get("/clientes/delete/:id", function(req, res) {
     let id = req.params['id'];
-    id = parseInt(id) - 1;
+    let umCliente = fakeData.find(x => x.id == id);
+    let posicao = fakeData.indexOf(umCliente);
 
-    fakeData.indexOf()
-
-    fakeData.splice(id,1);
+    if(posicao > -1) { // previne que dois usuários ao mesmo tempo deletem o mesmo elemento
+        fakeData.splice(posicao, 1);
+    }
 
     res.redirect("/clientes");
 

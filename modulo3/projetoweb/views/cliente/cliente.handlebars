@@ -1,7 +1,7 @@
 <h1>Clientes</h1>
 <hr>
 <a class="btn btn-primary" href="./clientes/novo">Novo</a>
-<table class="table">
+<table class="table" id="clientes">
     <thead>
         <tr>
             <th>ID</th>
@@ -10,7 +10,7 @@
             <th>Sexo</th>
             <th>Telefone</th>
             <th></th>
-            
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -25,13 +25,13 @@
             <td>{{this.sexo}}</td>
             <td>{{this.telefone}}</td>
             <td><a class="btn btn-primary" href="./clientes/alterar/{{this.id}}">Alterar</a></td>
-            <td><button class="btn btn-danger" for="meumodal">Excluir</button></td>
+            <td><button class="btn btn-danger js-delete" data-id="{{this.id}}">Excluir</button></td>
         </tr>
         {{/each}}
     </tbody>
 </table>
 
-
+{{!-- modal --}}
 <div class="modal" tabindex="-1" id="meumodal">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -43,9 +43,12 @@
         <p>Está certo disso?</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id="btnsim">Sim Silvio!</button>
+        <button type="button" class="btn btn-primary" id="btnsim">Sim</button>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btncancelar">Não</button>
       </div>
     </div>
   </div>
 </div>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/public/site.js"></script>
