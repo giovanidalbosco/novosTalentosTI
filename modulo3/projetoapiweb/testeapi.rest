@@ -1,0 +1,7 @@
+### chamada GET para /clientes
+GET http://localhost:3000/api/v1/clientes
+###
+
+### chamada GET para /cliente/1
+GET http://localhost:3000/api/v1/cliente/1
+###

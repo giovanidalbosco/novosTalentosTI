@@ -24,6 +24,12 @@ app.get("/api/v1/clientes", (req, res) => {
     res.end(JSON.stringify(fakeData));
 });
 
+app.get("/api/v1/cliente/:id", (req, res) => {
+    res.writeHead(200, {"content-type": "aplication/json"});
+    let id = req.params['id'];
+    let umCliente = fakeData.find(x => x.id == id);
+    res.end(JSON.stringify(umCliente));
+});
 
 app.listen(3000, () => {
     console.log("Servidor online");
