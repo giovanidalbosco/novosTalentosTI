@@ -23,9 +23,33 @@ POST http://localhost:3000/api/v1/clientes
 Content-Type: application/json
 
 {
-    "nome": "Huguinho",
+    "nome": "Joaozinho",
     "endereco": "Rua lololo",
     "sexo": "Masculino",
     "telefone": "7777-7896"
 }
+###
+
+### chamada PUT para /clientes/1
+PUT http://localhost:3000/api/v1/clientes/1
+Content-Type: application/json
+
+{
+    "nome": "Luluzinha",
+    "endereco": "Rua xuxuxu",
+    "sexo": "Feminino",
+    "telefone": "7777-7896"
+}
+###
+
+### chamada PUT para /clientes/1 sem body
+PUT http://localhost:3000/api/v1/clientes/1
+###
+
+### chamada PUT para /clientes/5 id não existe
+PUT http://localhost:3000/api/v1/clientes/5
+###
+
+### chamada DELETE para /clientes/1
+DELETE http://localhost:3000/api/v1/clientes/1
 ###
