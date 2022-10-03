@@ -14,6 +14,8 @@
                     <th>Nome</th>
                     <th>Endereço</th>
                     <th>Sexo</th>
+                    <th>Data Nasc</th>
+                    <th>Cidade</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,6 +24,8 @@
                     <td th:text="${cliente.nome}"></td>
                     <td th:text="${cliente.endereco}"></td>
                     <td th:text="${cliente.sexo}"></td>
+                    <td th:text="${cliente.dataNascimento}"></td>
+                    <td th:text="${cliente.cidade.nome}"></td>
                 </tr>
             </tbody>
         </table>

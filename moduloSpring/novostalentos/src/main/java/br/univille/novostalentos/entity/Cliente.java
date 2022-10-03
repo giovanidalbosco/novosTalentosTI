@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -21,6 +23,16 @@ public class Cliente {
     private String sexo;
     @Temporal(value= TemporalType.DATE)
     private Date dataNascimento;
+    @ManyToOne
+    @JoinColumn(name = "cidade_id", nullable=false)
+    private Cidade cidade;
+
+    public Cidade getCidade() {
+        return cidade;
+    }
+    public void setCidade(Cidade cidade) {
+        this.cidade = cidade;
+    }
     private static int teste = 0;
 
     public Cliente(){
