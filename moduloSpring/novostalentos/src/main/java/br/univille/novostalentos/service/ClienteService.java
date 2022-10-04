@@ -6,4 +6,6 @@ import br.univille.novostalentos.entity.Cliente;
 
 public interface ClienteService {
     List<Cliente> getAll();
+
+    Cliente save(Cliente cliente);
 }
