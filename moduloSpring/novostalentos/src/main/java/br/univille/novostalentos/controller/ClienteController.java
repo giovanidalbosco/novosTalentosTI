@@ -1,11 +1,14 @@
 package br.univille.novostalentos.controller;
 
+import java.util.Optional;
+
 // import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -20,7 +23,7 @@ import br.univille.novostalentos.service.ClienteService;
 public class ClienteController {
     
     @Autowired
-    private ClienteService service;
+    private ClienteService servico;
 
     @GetMapping
     public ModelAndView index() {
@@ -49,7 +52,7 @@ public class ClienteController {
         // listaClientes.add(cliente3);
 
 
-        var listaClientes = service.getAll();
+        var listaClientes = servico.getAll();
         return new ModelAndView("cliente/index", "listaClientes", listaClientes);
     }
 
@@ -62,7 +65,16 @@ public class ClienteController {
 
     @PostMapping(params = "form")
     public ModelAndView save(Cliente cliente) {
-        service.save(cliente);
+        servico.save(cliente);
         return new ModelAndView("redirect:/clientes");
     }
+
+    @GetMapping("/editar/{id}") 
+    public ModelAndView edit(@PathVariable("id") long id) {
+        var cliente = new Cliente();
+        cliente = servico.getOne(id);
+        return new ModelAndView("cliente/form", "cliente", cliente);
+    }
+
+
 }

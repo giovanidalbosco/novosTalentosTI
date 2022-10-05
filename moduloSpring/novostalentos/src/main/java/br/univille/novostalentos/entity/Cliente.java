@@ -23,17 +23,18 @@ public class Cliente {
     private String sexo;
     @Temporal(value= TemporalType.DATE)
     private Date dataNascimento;
-    @ManyToOne
-    @JoinColumn(name = "cidade_id", nullable=false)
-    private Cidade cidade;
-
-    public Cidade getCidade() {
-        return cidade;
-    }
-    public void setCidade(Cidade cidade) {
-        this.cidade = cidade;
-    }
+    // @ManyToOne
+    // @JoinColumn(name = "cidade_id", nullable=false)
+    // private Cidade cidade;
     private static int teste = 0;
+
+    // public Cidade getCidade() {
+    //     return cidade;
+    // }
+    // public void setCidade(Cidade cidade) {
+    //     this.cidade = cidade;
+    // }
+    
 
     public Cliente(){
         teste++;

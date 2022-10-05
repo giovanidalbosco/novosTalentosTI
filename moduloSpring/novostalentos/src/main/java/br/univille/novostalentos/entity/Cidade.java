@@ -16,8 +16,8 @@ public class Cidade {
     private long id;
     @Column(length=100, nullable=false)
     private String nome;
-    @OneToMany(mappedBy="cidade")
-    private Set<Cliente> clientes;
+    // @OneToMany(mappedBy="cidade")
+    // private Set<Cliente> clientes;
 
     public long getId() {
         return id;

@@ -7,17 +7,22 @@
 <body>
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
+        <a href="/cidades/novo" class="btn btn-primary">Novo</a>
         <table class="table">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr th:each="cidade : ${listaCidades}">
                     <td th:text="${cidade.id}"></td>
                     <td th:text="${cidade.nome}"></td>
+                    <td><a class="btn btn-primary" th:href="@{/cidades/editar/{id}(id=${cidade.id})}">Alterar</a></td>
+                    <td><a class="btn btn-danger" href="">Excluir</a></td>
                 </tr>
             </tbody>
         </table>
