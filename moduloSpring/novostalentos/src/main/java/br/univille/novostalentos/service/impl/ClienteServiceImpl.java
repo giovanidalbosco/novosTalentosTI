@@ -42,4 +42,9 @@ public class ClienteServiceImpl implements ClienteService{
         return repositorio.save(cliente);
     }
 
+    @Override
+    public void delete(long id) {
+        repositorio.deleteById(id);        
+    }
+
 }

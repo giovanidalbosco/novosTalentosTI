@@ -8,14 +8,18 @@
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
         <form th:action="@{/clientes/(form)}" method="POST" th:object="${cliente}">
+            <input type="hidden" th:field="${cliente.id}">
             <div class="form-group">
                 <label for="txtnome">Nome:</label>
                 <input type="text" class="form-control" id="txtnome" th:field="*{nome}">
+            </div>
+            <div class="form-group">
                 <label for="txtendereco">Endereço:</label>
                 <input type="text" class="form-control" id="txtendereco" th:field="${cliente.endereco}">
+            </div>
+            <div class="form-group">
                 <label for="txtsexo">Sexo:</label>
                 <input type="text" class="form-control" id="txtsexo" th:field="*{sexo}">
-                <input type="text" th:field="${cliente.id}" hidden>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>

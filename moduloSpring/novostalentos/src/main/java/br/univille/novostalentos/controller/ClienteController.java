@@ -71,10 +71,15 @@ public class ClienteController {
 
     @GetMapping("/editar/{id}") 
     public ModelAndView edit(@PathVariable("id") long id) {
-        var cliente = new Cliente();
-        cliente = servico.getOne(id);
+        var cliente = servico.getOne(id);
+        
         return new ModelAndView("cliente/form", "cliente", cliente);
     }
 
+    @GetMapping("/delete/{id}")
+    public ModelAndView delete(@PathVariable("id") long id) {
+        servico.delete(id);
 
+        return new ModelAndView("");
+    }
 }

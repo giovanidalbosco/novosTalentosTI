@@ -8,10 +8,10 @@
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
         <form th:action="@{/cidades/(form)}" method="POST" th:object="${cidade}">
+            <input type="hidden" th:field="${cidade.id}">
             <div class="form-group">
                 <label for="txtnome">Nome:</label>
                 <input type="text" class="form-control" id="txtnome" th:field="*{nome}">
-                <input type="text" th:field="${cidade.id}" hidden>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>

@@ -26,7 +26,6 @@ public class Cliente {
     // @ManyToOne
     // @JoinColumn(name = "cidade_id", nullable=false)
     // private Cidade cidade;
-    private static int teste = 0;
 
     // public Cidade getCidade() {
     //     return cidade;
@@ -35,12 +34,6 @@ public class Cliente {
     //     this.cidade = cidade;
     // }
     
-
-    public Cliente(){
-        teste++;
-        this.id = teste;
-    }
-
     public Date getDataNascimento() {
         return dataNascimento;
     }
