@@ -80,6 +80,6 @@ public class ClienteController {
     public ModelAndView delete(@PathVariable("id") long id) {
         servico.delete(id);
 
-        return new ModelAndView("");
+        return new ModelAndView("redirect:/clientes");
     }
 }

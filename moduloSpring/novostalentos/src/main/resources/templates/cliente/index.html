@@ -2,39 +2,60 @@
 <html xmlns:th="http://www.thymeleaf.org"
         xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"></html>
 
-<head th:include="layout :: head"></head>
+    <head th:include="layout :: head"></head>
 
-<body>
-    <nav th:replace="layout :: menu"></nav>
-    <main class="container">
-        <a href="/clientes/novo" class="btn btn-primary">Novo</a>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Endereço</th>
-                    <th>Sexo</th>
-                    <th>Data Nasc</th>
-                    <!-- <th>Cidade</th> -->
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="cliente : ${listaClientes}">
-                    <td th:text="${cliente.id}"></td>
-                    <td th:text="${cliente.nome}"></td>
-                    <td th:text="${cliente.endereco}"></td>
-                    <td th:text="${cliente.sexo}"></td>
-                    <td th:text="${cliente.dataNascimento}"></td>
-                    <!-- <td th:text="${cliente.cidade.nome}"></td> -->
-                    <td><a class="btn btn-primary" th:href="@{/clientes/editar/{id}(id=${cliente.id})}">Alterar</a></td>
-                    <td><a class="btn btn-danger" href="">Excluir</a></td>
-                </tr>
-            </tbody>
-        </table>
-    </main>
-    <footer th:include="layout :: footer"></footer>
-    <script th:src="@{/script.js}"></script>
-</body>
+    <body>
+        <nav th:replace="layout :: menu"></nav>
+        <main class="container">
+            <a href="/clientes/novo" class="btn btn-primary">Novo</a>
+            <table class="table" id="tabclientes">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Endereço</th>
+                        <th>Sexo</th>
+                        <th>Data Nasc</th>
+                        <!-- <th>Cidade</th> -->
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="cliente : ${listaClientes}">
+                        <td th:text="${cliente.id}"></td>
+                        <td th:text="${cliente.nome}"></td>
+                        <td th:text="${cliente.endereco}"></td>
+                        <td th:text="${cliente.sexo}"></td>
+                        <td th:text="${cliente.dataNascimento}"></td>
+                        <!-- <td th:text="${cliente.cidade.nome}"></td> -->
+                        <td>
+                            <a class="btn btn-primary" th:href="@{/clientes/editar/{id}(id=${cliente.id})}">Alterar</a>
+                            <button class="btn btn-danger js-delete" th:data-id="${cliente.id}">Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+
+        <div class="modal" tabindex="-1" id="modalcliente">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Excluir Cliente</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Confirma a exclusão do cliente?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="btnnao" data-bs-dismiss="modal">Não</button>
+                        <button type="button" class="btn btn-primary" id="btnsim">Sim</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer th:include="layout :: footer"></footer>
+        <script th:src="@{/script.js}"></script>
+    </body>
+</html>

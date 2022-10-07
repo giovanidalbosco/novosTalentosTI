@@ -38,11 +38,6 @@ public class ClienteServiceImpl implements ClienteService{
     }
 
     @Override
-    public Cliente update(Cliente cliente) {
-        return repositorio.save(cliente);
-    }
-
-    @Override
     public void delete(long id) {
         repositorio.deleteById(id);        
     }
