@@ -44,4 +44,11 @@ public class CidadeController {
         cidade = servico.getOne(id);
         return new ModelAndView("cidade/form", "cidade", cidade);
     }
+
+    @GetMapping("/delete/{id}")
+    public ModelAndView delete(@PathVariable("id") long id) {
+        servico.delete(id);
+
+        return new ModelAndView("redirect:/cidades");
+    }
 }

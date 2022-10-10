@@ -10,4 +10,6 @@ public interface CidadeService {
     Cidade save(Cidade cidade);
 
     Cidade getOne(long id);
+
+    void delete(long id);
 }

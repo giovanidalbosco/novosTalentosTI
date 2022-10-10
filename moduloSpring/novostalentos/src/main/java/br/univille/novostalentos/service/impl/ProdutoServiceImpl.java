@@ -5,40 +5,38 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.univille.novostalentos.entity.Cidade;
-import br.univille.novostalentos.repository.CidadeRepository;
-import br.univille.novostalentos.service.CidadeService;
+import br.univille.novostalentos.entity.Produto;
+import br.univille.novostalentos.repository.ProdutoRepository;
+import br.univille.novostalentos.service.ProdutoService;
 
 @Service
-public class CidadeServiceImpl implements CidadeService{
-    
+public class ProdutoServiceImpl implements ProdutoService {
+
     @Autowired
-    private CidadeRepository repositorio;
+    private ProdutoRepository repositorio;
 
     @Override
-    public List<Cidade> getAll() {
+    public List<Produto> getAll() {
         return repositorio.findAll();
     }
 
     @Override
-    public Cidade save(Cidade cidade) {
-        return repositorio.save(cidade);
+    public Produto save(Produto produto) {
+        return repositorio.save(produto);
     }
 
     @Override
-    public Cidade getOne(long id) {
+    public Produto getOne(long id) {
         var resultado = repositorio.findById(id);
-
         if (resultado.isPresent()) {
             return resultado.get();
         }
-        
-        return new Cidade();
+
+        return new Produto();
     }
 
     @Override
     public void delete(long id) {
         repositorio.deleteById(id);
     }
-    
 }
