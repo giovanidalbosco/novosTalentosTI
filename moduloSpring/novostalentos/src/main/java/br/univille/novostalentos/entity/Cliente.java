@@ -35,16 +35,16 @@ public class Cliente {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @FutureOrPresent
     private Date dataNascimento;
-    // @ManyToOne
-    // @JoinColumn(name = "cidade_id", nullable=false)
-    // private Cidade cidade;
+    @ManyToOne
+    @JoinColumn(name = "cidade_id", nullable=false)
+    private Cidade cidadeResidencia;
 
-    // public Cidade getCidade() {
-    //     return cidade;
-    // }
-    // public void setCidade(Cidade cidade) {
-    //     this.cidade = cidade;
-    // }
+    public Cidade getCidadeResidencia() {
+        return cidadeResidencia;
+    }
+    public void setCidadeResidencia(Cidade cidadeResidencia) {
+        this.cidadeResidencia = cidadeResidencia;
+    }
     
     public Date getDataNascimento() {
         return dataNascimento;

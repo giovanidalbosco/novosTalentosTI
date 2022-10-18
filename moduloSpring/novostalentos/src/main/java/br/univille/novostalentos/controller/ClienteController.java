@@ -1,5 +1,6 @@
 package br.univille.novostalentos.controller;
 
+import java.util.HashMap;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -19,6 +20,7 @@ import br.univille.novostalentos.entity.Cliente;
 // import br.univille.novostalentos.entity.Cliente;
 import br.univille.novostalentos.repository.ClienteRepository;
 import br.univille.novostalentos.service.ClienteService;
+import br.univille.novostalentos.service.CidadeService;
 
 @Controller
 @RequestMapping("/clientes")
@@ -26,6 +28,9 @@ public class ClienteController {
     
     @Autowired
     private ClienteService servico;
+
+    @Autowired
+    private CidadeService servico_cidade;
 
     @GetMapping
     public ModelAndView index() {
@@ -53,7 +58,6 @@ public class ClienteController {
         // listaClientes.add(cliente2);
         // listaClientes.add(cliente3);
 
-
         var listaClientes = servico.getAll();
         return new ModelAndView("cliente/index", "listaClientes", listaClientes);
     }
@@ -61,14 +65,21 @@ public class ClienteController {
     @GetMapping("/novo")
     public ModelAndView novo() {
         var cliente = new Cliente();
-        
-        return new ModelAndView("cliente/form", "cliente", cliente);
+        var listaCidades = servico_cidade.getAll();
+        HashMap<String, Object> dados = new HashMap<>();
+        dados.put("cliente", cliente);
+        dados.put("listaCidades", listaCidades);
+        return new ModelAndView("cliente/form", dados);
     }
 
     @PostMapping(params = "form")
     public ModelAndView save(@Valid Cliente cliente, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return new ModelAndView("cliente/form", "cliente", cliente);
+            var listaCidades = servico_cidade.getAll();
+            HashMap<String, Object> dados = new HashMap<>();
+            dados.put("cliente", cliente);
+            dados.put("listaCidades", listaCidades);
+            return new ModelAndView("cliente/form", dados);
         }
         servico.save(cliente);
         
@@ -78,8 +89,11 @@ public class ClienteController {
     @GetMapping("/editar/{id}") 
     public ModelAndView edit(@PathVariable("id") long id) {
         var cliente = servico.getOne(id);
-        
-        return new ModelAndView("cliente/form", "cliente", cliente);
+        var listaCidades = servico_cidade.getAll();
+        HashMap<String, Object> dados = new HashMap<>();
+        dados.put("cliente", cliente);
+        dados.put("listaCidades", listaCidades);
+        return new ModelAndView("cliente/form", dados);
     }
 
     @GetMapping("/delete/{id}")
