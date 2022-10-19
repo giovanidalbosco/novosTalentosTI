@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Produto {
@@ -13,8 +14,16 @@ public class Produto {
     private String nome;
     private String descricao;
     private float valor;
+    @ManyToOne
+    private Cidade cidadeOrigem;
 
 
+    public Cidade getCidadeOrigem() {
+        return cidadeOrigem;
+    }
+    public void setCidadeOrigem(Cidade cidadeOrigem) {
+        this.cidadeOrigem = cidadeOrigem;
+    }
     public long getId() {
         return id;
     }

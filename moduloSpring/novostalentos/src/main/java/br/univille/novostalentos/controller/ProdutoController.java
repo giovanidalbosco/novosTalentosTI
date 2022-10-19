@@ -1,10 +1,13 @@
 package br.univille.novostalentos.controller;
 
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.univille.novostalentos.entity.Produto;
+import br.univille.novostalentos.service.CidadeService;
 import br.univille.novostalentos.service.ProdutoService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +22,9 @@ public class ProdutoController {
     @Autowired
     private ProdutoService servico;
 
+    @Autowired
+    private CidadeService servicoCidade;
+
     @GetMapping
     public ModelAndView index() {
         var listaProdutos = servico.getAll();
@@ -28,8 +34,11 @@ public class ProdutoController {
     @GetMapping("/novo")
     public ModelAndView novo() {
         var produto = new Produto();
-
-        return new ModelAndView("produto/form", "produto", produto);
+        var listaCidades = servicoCidade.getAll();
+        HashMap<String,Object> dados = new HashMap<>();
+        dados.put("produto", produto);
+        dados.put("listaCidades", listaCidades);
+        return new ModelAndView("produto/form", dados);
     }
     
     @PostMapping(params = "form")
@@ -41,8 +50,11 @@ public class ProdutoController {
     @GetMapping("/editar/{id}")
     public ModelAndView edit(@PathVariable("id") long id) {
         Produto produto = servico.getOne(id);
-
-        return new ModelAndView("produto/form", "produto", produto);
+        var listaCidades = servicoCidade.getAll();
+        HashMap<String,Object> dados = new HashMap<>();
+        dados.put("produto", produto);
+        dados.put("listaCidades", listaCidades);
+        return new ModelAndView("produto/form", dados);
     }
 
     @GetMapping("/delete/{id}")

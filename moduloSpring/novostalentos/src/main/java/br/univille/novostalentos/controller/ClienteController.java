@@ -30,7 +30,7 @@ public class ClienteController {
     private ClienteService servico;
 
     @Autowired
-    private CidadeService servico_cidade;
+    private CidadeService servicoCidade;
 
     @GetMapping
     public ModelAndView index() {
@@ -65,7 +65,7 @@ public class ClienteController {
     @GetMapping("/novo")
     public ModelAndView novo() {
         var cliente = new Cliente();
-        var listaCidades = servico_cidade.getAll();
+        var listaCidades = servicoCidade.getAll();
         HashMap<String, Object> dados = new HashMap<>();
         dados.put("cliente", cliente);
         dados.put("listaCidades", listaCidades);
@@ -75,7 +75,7 @@ public class ClienteController {
     @PostMapping(params = "form")
     public ModelAndView save(@Valid Cliente cliente, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            var listaCidades = servico_cidade.getAll();
+            var listaCidades = servicoCidade.getAll();
             HashMap<String, Object> dados = new HashMap<>();
             dados.put("cliente", cliente);
             dados.put("listaCidades", listaCidades);
@@ -89,7 +89,7 @@ public class ClienteController {
     @GetMapping("/editar/{id}") 
     public ModelAndView edit(@PathVariable("id") long id) {
         var cliente = servico.getOne(id);
-        var listaCidades = servico_cidade.getAll();
+        var listaCidades = servicoCidade.getAll();
         HashMap<String, Object> dados = new HashMap<>();
         dados.put("cliente", cliente);
         dados.put("listaCidades", listaCidades);

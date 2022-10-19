@@ -28,7 +28,8 @@
                         <td th:text="${cliente.sexo}"></td>
                         <td th:if="${cliente.dataNascimento}" th:text="${#dates.format(cliente.dataNascimento, 'dd/MM/yyyy')}"></td>
                         <td th:unless="${cliente.dataNascimento}">Não informada</td>
-                        <td th:text="${cliente.cidadeResidencia.nome}"></td>
+                        <td th:text="${cliente.cidadeResidencia?.nome}"></td>
+                        <!-- o ? após o objeto transforma o objeto em opcional -->
                         <td>
                             <a class="btn btn-primary" th:href="@{/clientes/editar/{id}(id=${cliente.id})}">Alterar</a>
                             <button class="btn btn-danger js-delete" th:data-id="${cliente.id}">Excluir</button>

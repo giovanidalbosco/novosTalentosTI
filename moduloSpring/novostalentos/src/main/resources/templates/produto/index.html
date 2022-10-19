@@ -24,6 +24,7 @@
                         <td th:text="${produto.nome}"></td>
                         <td th:text="${produto.descricao}"></td>
                         <td th:text="${produto.valor}"></td>
+                        <td th:text="${produto.cidadeOrigem?.nome}"></td>
                         <td>
                             <a class="btn btn-primary" th:href="@{/produtos/editar/{id}(id=${produto.id})}">Alterar</a>
                             <button class="btn btn-danger js-delete" th:data-id="${produto.id}">Excluir</button>
