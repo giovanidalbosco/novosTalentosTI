@@ -1,14 +1,51 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    background-image: url('img/background.jpg');
+    background-size: cover;
+    background-attachment:fixed;
+}
+
 .container {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 35% 65%;
     grid-template-areas:
-    'serv1 img_sv1'
+    'header header'
+    'img_sv1 serv1'
     'img_sv2 serv2'
-    'serv3 img_sv3'
+    'img_sv3 serv3'
     'img_sv4 serv4'
-    'serv5 img_sv5';
-    padding: 10px;
-    grid-gap: 1px;
+    'img_sv5 serv5'
+    'footer footer';
+    padding: 2em;
+    grid-gap: 1em;
+}
+
+.color-font {
+    color: lightgray;
+}
+.color-font:hover {
+    color: #5d5e9d;
+}
+
+.titulo {
+    grid-area: header;
+    color: rgb(51, 51, 51);
+    background: rgb(255,255,255);
+    background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(0,0,0,0.80) 100%);
+    border-radius: 5px;
+    padding: .2em;
+}
+
+.rodape {
+    grid-area: footer;
+}
+
+.text-bg-custom {
+    background: rgb(255,255,255);
+    background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(0,0,0,0.80) 100%);
 }
 
 .service1 {
@@ -31,10 +68,14 @@
     grid-area: serv5;
 }
 
+.image {
+    border:solid rgba(100, 100, 100, 0.80) 3px;
+}
+
 .image-serv1 {
     grid-area: img_sv1;
     border-radius: 7px;
-    background-image: url("https://th.bing.com/th/id/OIP.8DhqrdK_enYQbi_7Saky2wHaE7?pid=ImgDet&rs=1");
+    background-image: url('img/alvenaria.jpg');
     background-position-x: center;
     background-position-y: center;
     background-size:cover;
@@ -43,14 +84,14 @@
 .image-serv2 {
     grid-area: img_sv2;
     border-radius: 7px;
-    background-image: url('https://modernciso.com/wp-content/uploads/2017/11/iStock-602302734-1-1080x675.jpg');
+    background-image: url('img/pintura.jpg');
     background-size: cover;
 }
 
 .image-serv3 {
     grid-area: img_sv3;
     border-radius: 7px;
-    background-image: url("https://th.bing.com/th/id/OIP.CPrnQaov4-MnDb5kjcNpfwHaET?pid=ImgDet&rs=1");
+    background-image: url('img/eletrica.jpg');
     background-position-x: center;
     background-position-y: center;
     background-size:cover;
@@ -59,7 +100,7 @@
 .image-serv4 {
     grid-area: img_sv4;
     border-radius: 7px;
-    background-image: url("https://th.bing.com/th/id/R.3a0f5bddac397fc52ebe4fd7944c7989?rik=KBN7Hazarzu2eQ&riu=http%3a%2f%2ffiles.abovetopsecret.com%2ffiles%2fimg%2fik5d336207.jpg&ehk=ptjghBGeL7yqtW1pdlFkKn%2b85shlgLwOKbt5UZ2w3%2b4%3d&risl=&pid=ImgRaw&r=0");
+    background-image: url('img/hidraulica.jpg');
     background-position-x: center;
     background-position-y: center;
     background-size:cover;
@@ -68,8 +109,15 @@
 .image-serv5 {
     grid-area: img_sv5;
     border-radius: 7px;
-    background-image: url("https://cdn.mundodastribos.com/2019/03/imagem-de-satelite-ao-vivo.jpg");
+    background-image: url('img/acabamento.jpg');
     background-position-x: center;
     background-position-y: center;
     background-size:cover;
 }
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.custom-toggler.navbar-toggler {
+    border-color: rgb(255, 255, 255);
+} 
