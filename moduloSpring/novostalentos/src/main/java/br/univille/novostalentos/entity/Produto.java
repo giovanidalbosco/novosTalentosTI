@@ -1,5 +1,6 @@
 package br.univille.novostalentos.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +15,7 @@ public class Produto {
     private String nome;
     private String descricao;
     private float valor;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE})
     private Cidade cidadeOrigem;
 
 

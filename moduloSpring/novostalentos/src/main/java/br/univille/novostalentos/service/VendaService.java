@@ -7,5 +7,10 @@ import br.univille.novostalentos.entity.Venda;
 public interface VendaService {
 
     List<Venda> getAll();
+
+    Venda getOne(long id);
     
+    Venda save(Venda venda);
+
+    void delete(long id);
 }

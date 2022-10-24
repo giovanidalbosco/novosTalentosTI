@@ -1,7 +1,6 @@
 package br.univille.novostalentos.controller;
 
 import java.util.HashMap;
-import java.util.Optional;
 
 import javax.validation.Valid;
 

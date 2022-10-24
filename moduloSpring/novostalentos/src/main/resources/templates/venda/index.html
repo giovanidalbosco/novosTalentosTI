@@ -7,43 +7,42 @@
     <body>
         <nav th:replace="layout :: menu"></nav>
         <main class="container">
-            <a href="/produtos/novo" class="btn btn-primary">Novo</a>
-            <table class="table" id="tabprodutos">
+            <a href="/vendas/novo" class="btn btn-primary">Novo</a>
+            <table class="table" id="tabvendas">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nome</th>
-                        <th>Descrição</th>
-                        <th>Valor</th>
-                        <th>Cidade de origem</th>
+                        <th>Data</th>
+                        <th>Comprador</th>
+                        <!-- <th>Lista de Itens</th> -->
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="produto : ${listaProdutos}">
-                        <td th:text="${produto.id}"></td>
-                        <td th:text="${produto.nome}"></td>
-                        <td th:text="${produto.descricao}"></td>
-                        <td th:text="${produto.valor}"></td>
-                        <td th:text="${produto.cidadeOrigem?.nome}"></td>
+                    <tr th:each="venda : ${listaVendas}">
+                        <td th:text="${venda.id}"></td>
+                        <td th:text="${#dates.format(venda.data, 'dd/MM/yyyy')}"></td>
+                        <td th:text="${venda.comprador?.nome}"></td>
+                        <!-- <td th:text="${venda.colItens}"></td> -->
+                        <!-- o ? após o objeto transforma o objeto em opcional -->
                         <td>
-                            <a class="btn btn-primary" th:href="@{/produtos/editar/{id}(id=${produto.id})}">Alterar</a>
-                            <button class="btn btn-danger js-delete" th:data-id="${produto.id}">Excluir</button>
+                            <a class="btn btn-primary" th:href="@{/vendas/editar/{id}(id=${venda.id})}">Alterar</a>
+                            <button class="btn btn-danger js-delete" th:data-id="${venda.id}">Excluir</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </main>
 
-        <div class="modal" tabindex="-1" id="modalproduto">
+        <div class="modal" tabindex="-1" id="modalvenda">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Excluir Produto</h5>
+                        <h5 class="modal-title">Excluir Venda</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p>Confirma a exclusão do produto?</p>
+                        <p>Confirma a exclusão da venda?</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" id="btnnao" data-bs-dismiss="modal">Não</button>
@@ -54,6 +53,6 @@
         </div>
 
         <footer th:include="layout :: footer"></footer>
-        <script th:src="@{/scriptProduto.js}"></script>
+        <script th:src="@{/scriptVenda.js}"></script>
     </body>
 </html>

@@ -1,8 +1,8 @@
 package br.univille.novostalentos.entity;
 
-import java.util.ArrayList;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +14,6 @@ import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import net.bytebuddy.implementation.bytecode.assign.reference.GenericTypeAwareAssigner;
 
 @Entity
 public class Venda {
@@ -24,10 +23,10 @@ public class Venda {
     @Temporal(value=TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date data;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE})
     private Cliente comprador;
-    @OneToMany
-    private ArrayList<ItemVenda> colItens;
+    // @OneToMany(mappedBy="venda")
+    // private ArrayList<ItemVenda> colItens;
 
     public long getId() {
         return id;
@@ -50,12 +49,12 @@ public class Venda {
         this.comprador = comprador;
     }
 
-    public ArrayList<ItemVenda> getColItens() {
-        return colItens;
-    }
-    public void setColItens(ArrayList<ItemVenda> colItens) {
-        this.colItens = colItens;
-    }
+    // public ArrayList<ItemVenda> getColItens() {
+    //     return colItens;
+    // }
+    // public void setColItens(ArrayList<ItemVenda> colItens) {
+    //     this.colItens = colItens;
+    // }
 
 
 }

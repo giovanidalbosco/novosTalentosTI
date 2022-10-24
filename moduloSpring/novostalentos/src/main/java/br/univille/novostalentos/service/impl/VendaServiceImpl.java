@@ -19,5 +19,25 @@ public class VendaServiceImpl implements VendaService {
     public List<Venda> getAll() {
         return repositorio.findAll();
     }
+
+    @Override
+    public Venda getOne(long id) {
+        var resultado = repositorio.findById(id);
+        if (resultado.isPresent()) {
+            return resultado.get();
+        }
+        
+        return new Venda();
+    }
     
+    @Override
+    public Venda save(Venda venda) {
+        return repositorio.save(venda);
+    }
+
+    @Override
+    public void delete(long id) {
+        repositorio.deleteById(id);
+    }
+
 }

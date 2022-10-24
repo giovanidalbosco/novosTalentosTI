@@ -2,6 +2,7 @@ package br.univille.novostalentos.entity;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +17,6 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.FutureOrPresent;
 
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.util.pattern.PatternParseException.PatternMessage;
 
 @Entity
 public class Cliente {
@@ -35,7 +35,7 @@ public class Cliente {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @FutureOrPresent
     private Date dataNascimento;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE})
     @JoinColumn(name = "cidade_id", nullable=false)
     private Cidade cidadeResidencia;
 
@@ -49,7 +49,6 @@ public class Cliente {
     public Date getDataNascimento() {
         return dataNascimento;
     }
-
     public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
