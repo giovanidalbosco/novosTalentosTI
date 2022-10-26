@@ -25,34 +25,14 @@
                         <td th:text="${venda.comprador?.nome}"></td>
                         <!-- <td th:text="${venda.colItens}"></td> -->
                         <!-- o ? após o objeto transforma o objeto em opcional -->
-                        <td>
+                        <!-- <td>
                             <a class="btn btn-primary" th:href="@{/vendas/editar/{id}(id=${venda.id})}">Alterar</a>
-                            <button class="btn btn-danger js-delete" th:data-id="${venda.id}">Excluir</button>
-                        </td>
+                        </td> -->
                     </tr>
                 </tbody>
             </table>
         </main>
 
-        <div class="modal" tabindex="-1" id="modalvenda">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Excluir Venda</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Confirma a exclusão da venda?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" id="btnnao" data-bs-dismiss="modal">Não</button>
-                        <button type="button" class="btn btn-primary" id="btnsim">Sim</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <footer th:include="layout :: footer"></footer>
-        <script th:src="@{/scriptVenda.js}"></script>
     </body>
 </html>

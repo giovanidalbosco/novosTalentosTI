@@ -1,12 +1,15 @@
 package br.univille.novostalentos.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
@@ -23,10 +26,13 @@ public class Venda {
     @Temporal(value=TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date data;
+    
     @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE})
     private Cliente comprador;
-    // @OneToMany(mappedBy="venda")
-    // private ArrayList<ItemVenda> colItens;
+
+    @OneToMany
+    @JoinColumn(name = "venda_id")
+    private List<ItemVenda> colItens = new ArrayList<>();
 
     public long getId() {
         return id;
@@ -49,12 +55,12 @@ public class Venda {
         this.comprador = comprador;
     }
 
-    // public ArrayList<ItemVenda> getColItens() {
-    //     return colItens;
-    // }
-    // public void setColItens(ArrayList<ItemVenda> colItens) {
-    //     this.colItens = colItens;
-    // }
+    public List<ItemVenda> getColItens() {
+        return colItens;
+    }
+    public void setColItens(List<ItemVenda> colItens) {
+        this.colItens = colItens;
+    }
 
 
 }

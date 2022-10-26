@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.univille.novostalentos.entity.Venda;
 import br.univille.novostalentos.service.ClienteService;
+import br.univille.novostalentos.service.ProdutoService;
 import br.univille.novostalentos.service.VendaService;
 
 
@@ -25,6 +26,9 @@ public class VendaController {
     @Autowired
     private ClienteService servicoCliente;
 
+    @Autowired
+    private ProdutoService servicoProduto;
+
     @GetMapping
     public ModelAndView index() {
         var listaVendas = servico.getAll();
@@ -35,9 +39,11 @@ public class VendaController {
     public ModelAndView novo() {
         var venda = new Venda();
         var listaClientes = servicoCliente.getAll();
+        var listaProdutos = servicoProduto.getAll();
         HashMap<String,Object> dados = new HashMap<>();
         dados.put("venda", venda);
         dados.put("listaClientes", listaClientes);
+        dados.put("listaProdutos", listaProdutos);
         return new ModelAndView("venda/form", dados);
     }
 
@@ -48,21 +54,16 @@ public class VendaController {
         return new ModelAndView("redirect:/vendas");
     }
 
-    @GetMapping("/editar/{id}")
-    public ModelAndView edit(@PathVariable("id") long id) {
-        var venda = servico.getOne(id);
-        var listaClientes = servicoCliente.getAll();
-        HashMap<String, Object> dados = new HashMap<>();
-        dados.put("venda", venda);
-        dados.put("listaClientes", listaClientes);
-        return new ModelAndView("venda/form", dados);
-    }
-
-    @GetMapping("/delete/{id}")
-    public ModelAndView delete(@PathVariable("id") long id) {
-        servico.delete(id);
-
-        return new ModelAndView("redirect:/vendas");
-    }
+    // @GetMapping("/editar/{id}")
+    // public ModelAndView edit(@PathVariable("id") long id) {
+    //     var venda = servico.getOne(id);
+    //     var listaClientes = servicoCliente.getAll();
+    //     var listaProdutos = servicoProduto.getAll();
+    //     HashMap<String, Object> dados = new HashMap<>();
+    //     dados.put("venda", venda);
+    //     dados.put("listaClientes", listaClientes);
+    //     dados.put("listaProdutos", listaProdutos);
+    //     return new ModelAndView("venda/form", dados);
+    // }
     
 }

@@ -35,9 +35,5 @@ public class VendaServiceImpl implements VendaService {
         return repositorio.save(venda);
     }
 
-    @Override
-    public void delete(long id) {
-        repositorio.deleteById(id);
-    }
 
 }

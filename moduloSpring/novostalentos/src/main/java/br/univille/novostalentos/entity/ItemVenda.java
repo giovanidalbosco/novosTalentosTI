@@ -1,5 +1,6 @@
 package br.univille.novostalentos.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,7 +12,7 @@ public class ItemVenda {
     private long id;
     private int quantidade;
     private float valorVenda;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
     private Produto produto;
 
     public long getId() {

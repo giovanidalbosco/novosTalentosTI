@@ -12,5 +12,4 @@ public interface VendaService {
     
     Venda save(Venda venda);
 
-    void delete(long id);
 }
