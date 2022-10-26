@@ -30,20 +30,50 @@
                                 <th>Produto</th>
                                 <th>Quantidade</th>
                                 <th>Valor</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr th:each="item : *{colItens}">
+                            <tr th:each="item, stat : *{colItens}">
                                 <td th:text="${item.produto?.nome}"></td>
+                                <input type="hidden" th:field="*{colItens[__${stat.index}__].produto}">
                                 <td th:text="${item.quantidade}"></td>
+                                <input type="hidden" th:field="*{colItens[__${stat.index}__].quantidade}">
                                 <td th:text="${item.valorVenda}"></td>
+                                <input type="hidden" th:field="*{colItens[__${stat.index}__].valorVenda}">
+                                <td>
+                                    <button class="btn btn-danger" type="submit" name="removeItem" th:value="__${stat.index}__">Remover</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Novo Item de venda
+                        </h5>
+                        <div class="form-group">
+                            <label for="txtProduto">Cidade:</label>
+                            <select class="form-select" id="txtProduto" th:field="${novoItem.produto}">
+                                <option value="0">Selecione uma opção</option>
+                                <option th:each="produto : ${listaProdutos}" th:value="${produto.id}" th:text="${produto.nome}"></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtQuantidade">Quantidade:</label>
+                            <input type="number" id="txtQuantidade" class="form-control" th:field="${novoItem.quantidade}">
+                        </div>
+                        <div class="form-group">
+                            <label for="txtValorVenda">Valor da venda:</label>
+                            <input type="number" id="txtValorVenda" class="form-control" th:field="${novoItem.valorVenda}">
+                        </div>
+                        <button type="submit" name="addItem" class="btn btn-primary">Adicionar Item</button>
+                    </div>
+                </div>
             </div>
             
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" name="save" class="btn btn-primary">Enviar</button>
         </form>
     </main>
     <footer th:include="layout :: footer"></footer>

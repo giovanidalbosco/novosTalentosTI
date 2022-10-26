@@ -30,7 +30,7 @@ public class Venda {
     @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE})
     private Cliente comprador;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "venda_id")
     private List<ItemVenda> colItens = new ArrayList<>();
 

@@ -1,11 +1,13 @@
 package br.univille.novostalentos.entity;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+@Entity
 public class ItemVenda {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,6 +43,10 @@ public class ItemVenda {
     }
     public void setProduto(Produto produto) {
         this.produto = produto;
+    }
+
+    public float getValorFinal() {
+        return this.getValorVenda() * this.getQuantidade();
     }
 
 

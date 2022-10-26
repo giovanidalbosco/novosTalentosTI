@@ -15,7 +15,7 @@
                         <th>Data</th>
                         <th>Comprador</th>
                         <!-- <th>Lista de Itens</th> -->
-                        <th></th>
+                        <th>Total</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,6 +23,7 @@
                         <td th:text="${venda.id}"></td>
                         <td th:text="${#dates.format(venda.data, 'dd/MM/yyyy')}"></td>
                         <td th:text="${venda.comprador?.nome}"></td>
+                        <td th:text="${#aggregates.sum(venda.colItens.![getValorFinal])}"></td>
                         <!-- <td th:text="${venda.colItens}"></td> -->
                         <!-- o ? após o objeto transforma o objeto em opcional -->
                         <!-- <td>
