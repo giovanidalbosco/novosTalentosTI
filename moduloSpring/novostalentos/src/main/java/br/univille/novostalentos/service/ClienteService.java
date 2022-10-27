@@ -12,4 +12,6 @@ public interface ClienteService {
     Cliente getOne(long id);
 
     void delete(long id);
+
+    List<Cliente> findByNome(String nome);
 }

@@ -1,0 +1,45 @@
+### Retorna todos os objetos cliente
+GET http://localhost:8080/api/v1/clientes
+
+### Retorna um único objeto cliente pelo ID
+GET http://localhost:8080/api/v1/clientes/1
+
+### Retorna um erro 404 quando ID de cliente não é encontrado
+GET http://localhost:8080/api/v1/clientes/99
+
+### Retorna uma lista de objetos cliente conforme texto de busca
+GET http://localhost:8080/api/v1/clientes/nome/Mari
+
+###
+GET http://localhost:8080/api/v1/clientes/?nome=Mari
+
+###
+POST http://localhost:8080/api/v1/clientes
+Content-Type: application/json
+
+{
+    "nome": "Daniel",
+    "endereco": "Rua lelele",
+    "sexo": "Masculino",
+    "dataNascimento": "2023-12-05",
+    "cidadeResidencia": {
+      "id": 1
+    }
+}
+
+###
+PUT http://localhost:8080/api/v1/clientes/1
+Content-Type: application/json
+
+{
+    "nome": "Giovani Valle",
+    "endereco": "Rua lalala",
+    "sexo": "Masculino",
+    "dataNascimento": "2023-09-07",
+    "cidadeResidencia": {
+      "id": 1
+    }
+}
+
+###
+DELETE http://localhost:8080/api/v1/clientes/2
